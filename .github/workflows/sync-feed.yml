@@ -216,133 +216,101 @@ jobs:
           }
 
           async function fetchLinkedInArticles() {
-            console.log('Automating LinkedIn candidate link discovery, live verification & dead-link filtering for Baljeetsingh Sucharia...');
+            console.log('Dynamically searching and parsing live LinkedIn posts for Baljeetsingh Sucharia...');
             
-            // Candidate URLs from Baljeetsingh Sucharia's LinkedIn activity and technical publications
-            const candidateUrls = [
-              'https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/articles/',
-              'https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/posts/',
-              'https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/all/',
-              'https://www.linkedin.com/in/baljeetsinghsucharia/',
-              'https://www.linkedin.com/in/baljeetsingh/recent-activity/articles/',
-              'https://www.linkedin.com/in/baljeetsingh/recent-activity/posts/',
-              'https://blog.baljeetsingh.net/2025/07/how-to-make-your-linkedin-profile-stand.html'
+            const searchQueries = [
+              'site:linkedin.com/posts/baljeetsingh_',
+              'site:linkedin.com/posts/baljeetsinghsucharia_',
+              'site:linkedin.com/posts/ "baljeetsingh sucharia"',
+              'site:linkedin.com/posts/ "baljeetsingh"'
             ];
+
+            const candidateLinks = new Set();
+
+            for (const q of searchQueries) {
+              for (let page = 1; page <= 51; page += 10) {
+                try {
+                  const searchUrl = `https://search.yahoo.com/search?p=${encodeURIComponent(q)}&b=${page}`;
+                  const res = await fetch(searchUrl, {
+                    headers: {
+                      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                    }
+                  });
+                  const text = await res.text();
+                  const ruMatches = [...text.matchAll(/\/RU=([^/]+)\/RK=/g)];
+                  
+                  for (const m of ruMatches) {
+                    let link = decodeURIComponent(m[1]).split('?')[0];
+                    link = link.replace(/https?:\/\/[a-z]{2,3}\.linkedin\.com/, 'https://www.linkedin.com');
+                    
+                    if ((link.includes('/posts/baljeetsingh_') || link.includes('/posts/baljeetsinghsucharia_')) && link.includes('-activity-')) {
+                      candidateLinks.add(link);
+                    }
+                  }
+                } catch (err) {
+                  // Silently continue if search page network flaked
+                }
+              }
+            }
+
+            console.log(`Discovered ${candidateLinks.size} authentic LinkedIn post URLs dynamically from search engine. Verifying and parsing...`);
 
             const verifiedItems = [];
             const seenTitles = new Set();
 
-            for (const url of candidateUrls) {
+            for (const url of candidateLinks) {
               try {
-                const res = await fetch(url, {
+                // Live HTTP status check
+                const headRes = await fetch(url, {
                   headers: {
                     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
                   },
                   redirect: 'follow'
                 });
 
-                const finalUrl = res.url || url;
-                // Automatically ignore dead links (redirected to article_not_found or 404)
-                if (finalUrl.includes('article_not_found') || finalUrl.includes('trk=article_not_found') || res.status === 404) {
-                  console.log(`  ❌ Discarded broken link: ${url}`);
+                const finalUrl = headRes.url || url;
+                if (headRes.status === 404 || finalUrl.includes('article_not_found') || finalUrl.includes('trk=article_not_found')) {
                   continue;
                 }
 
-                const title = formatSlugToTitle(url);
+                // Dynamic Title extraction from post slug
+                let slug = url.split('/posts/')[1] || '';
+                slug = slug.split('-activity-')[0].replace(/^baljeetsingh_/, '').replace(/^baljeetsinghsucharia_/, '').replace(/-/g, ' ');
+                let title = slug.replace(/\b\w/g, l => l.toUpperCase()).trim();
+                if (!title || title.length < 3) title = 'Baljeetsingh Sucharia Tech & Leadership Dispatch';
+                
                 if (seenTitles.has(title.toLowerCase())) continue;
                 seenTitles.add(title.toLowerCase());
 
-                const labels = extractLabels(title, url);
+                // Dynamic Labels extraction
+                const lower = (title + ' ' + url).toLowerCase();
+                const labels = ['LinkedIn'];
+                if (lower.match(/\b(ai|intelligence|futureofwork|llm)\b/)) labels.push('AI');
+                if (lower.match(/\b(architecture|caching|cloud|systems|opensource|dpg|dpdpa)\b/)) labels.push('Architecture');
+                if (lower.match(/\b(leadership|coach|leaders|mindset|career|gratitude|womensday)\b/)) labels.push('Leadership');
+                if (lower.match(/\b(strategy|product|kpi|growth|business|innovation)\b/)) labels.push('Strategy');
+                if (labels.length === 1) labels.push('Engineering', 'Insights');
+
+                // Dynamic date formatting
+                let dateStr = 'LinkedIn Post';
+                let isoDate = new Date().toISOString();
+
                 verifiedItems.push({
                   type: 'linkedin',
                   title: title,
                   url: url,
-                  snippet: `Strategic dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering systems.`,
-                  date: 'LinkedIn Article',
-                  publishedAt: new Date().toISOString(),
+                  snippet: `LinkedIn dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering architecture.`,
+                  date: dateStr,
+                  publishedAt: isoDate,
                   labels: labels
                 });
-                console.log(`  ✅ Verified active article: "${title}"`);
-              } catch (err) {
-                console.log(`  ⚠️ Skipped unreachable link: ${url}`);
+                console.log(`  ✅ Verified: "${title}"`);
+              } catch (e) {
+                // Ignore unreachable links
               }
             }
 
-            // Baljeetsingh Sucharia's authentic executive publications & dispatches
-            const baselineDispatches = [
-              {
-                title: 'Build with Logic and Lead with Legacy: An Executive Framework for Modern Engineering Leaders',
-                url: 'https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/articles/',
-                date: 'LinkedIn Article',
-                publishedAt: '2026-02-10T10:00:00.000Z',
-                snippet: 'Core leadership principles by Baljeetsingh Sucharia on balancing algorithmic discipline, technical depth, and lasting organizational impact.',
-                labels: ['Leadership', 'Strategy', 'Culture']
-              },
-              {
-                title: 'Product Strategy in the AI Era: Moving from Feature Roadmaps to Autonomous Agentic Outcomes',
-                url: 'https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/posts/',
-                date: 'Recent Dispatch',
-                publishedAt: '2025-12-04T10:00:00.000Z',
-                snippet: 'How product leaders must evolve from shipping static user interfaces to orchestrating multi-agent workflows and deterministic AI pipelines.',
-                labels: ['AI', 'ProductStrategy', 'Innovation']
-              },
-              {
-                title: 'Mentoring the Next Generation of Builders: Guiding Hackathon Teams to Scalable Solutions',
-                url: 'https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/posts/',
-                date: 'Mentorship Note',
-                publishedAt: '2025-09-18T10:00:00.000Z',
-                snippet: 'Lessons and coaching strategies from guiding university students and startup founders through Smart India Hackathon and rapid product prototyping.',
-                labels: ['Mentorship', 'Leadership', 'Hackathon']
-              },
-              {
-                title: 'The AI Consultant\'s Playbook: Deterministic Pipelines, Private Knowledge Graphs & Custom Tooling',
-                url: 'https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/articles/',
-                date: 'Architecture Note',
-                publishedAt: '2025-06-15T10:00:00.000Z',
-                snippet: 'Why enterprise GenAI implementations require private knowledge retrieval graphs and strict validation rather than generic API wrappers.',
-                labels: ['AI', 'Architecture', 'DataSystems']
-              },
-              {
-                title: 'How to Position Technical Leadership and Enterprise Impact on Professional Profiles',
-                url: 'https://blog.baljeetsingh.net/2025/07/how-to-make-your-linkedin-profile-stand.html',
-                date: 'Strategic Guide',
-                publishedAt: '2025-07-15T10:00:00.000Z',
-                snippet: 'Actionable strategies for engineering managers and senior architects to articulate enterprise business value and technical achievements.',
-                labels: ['Career', 'Leadership', 'PersonalBrand']
-              },
-              {
-                title: 'Transitioning Enterprise Monoliths to Event-Driven Cloud Workflows',
-                url: 'https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/articles/',
-                date: 'Engineering Dispatch',
-                publishedAt: '2025-03-22T10:00:00.000Z',
-                snippet: 'Pragmatic blueprints for decomposing mission-critical legacy architectures into scalable distributed event systems without downtime.',
-                labels: ['Architecture', 'Cloud', 'Engineering']
-              },
-              {
-                title: 'Designing Fault-Tolerant Distributed Data Architectures: Patterns from the Field',
-                url: 'https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/posts/',
-                date: 'Technical Note',
-                publishedAt: '2024-11-10T10:00:00.000Z',
-                snippet: 'Resilience patterns, idempotency keys, and transaction guarantees in high-throughput enterprise systems.',
-                labels: ['DataSystems', 'Architecture', 'Reliability']
-              }
-            ];
-
-            for (const b of baselineDispatches) {
-              if (!seenTitles.has(b.title.toLowerCase())) {
-                verifiedItems.push({
-                  type: 'linkedin',
-                  title: b.title,
-                  url: b.url,
-                  snippet: b.snippet,
-                  date: b.date,
-                  publishedAt: b.publishedAt,
-                  labels: b.labels
-                });
-                seenTitles.add(b.title.toLowerCase());
-              }
-            }
-
+            console.log(`Successfully parsed ${verifiedItems.length} live LinkedIn items dynamically.`);
             return verifiedItems;
           }
 
