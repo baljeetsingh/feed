@@ -108,13 +108,24 @@ jobs:
           }
 
           async function fetchStackOverflow() {
-            console.log('Fetching live Stack Overflow solutions...');
+            console.log('Fetching live Stack Overflow answers from https://stackoverflow.com/users/1415364/baljeetsingh-sucharia?tab=answers ...');
             try {
-              const res = await fetch(`https://api.stackexchange.com/2.3/users/${STACK_OVERFLOW_USER_ID}/answers?order=desc&sort=votes&site=stackoverflow&pagesize=100`);
-              const data = await res.json();
-              if (!data.items) return [];
+              let page = 1;
+              let allAnswerItems = [];
+              
+              while (true) {
+                const res = await fetch(`https://api.stackexchange.com/2.3/users/${STACK_OVERFLOW_USER_ID}/answers?order=desc&sort=creation&site=stackoverflow&page=${page}&pagesize=100&filter=!9_bDDxJY5`);
+                const data = await res.json();
+                if (data.items && data.items.length > 0) {
+                  allAnswerItems.push(...data.items);
+                }
+                if (!data.has_more || page >= 5) break;
+                page++;
+              }
 
-              const qIds = [...new Set(data.items.map(a => a.question_id))];
+              if (allAnswerItems.length === 0) return [];
+
+              const qIds = [...new Set(allAnswerItems.map(a => a.question_id))];
               const qMap = {};
               for (let i = 0; i < qIds.length; i += 50) {
                 const batchIds = qIds.slice(i, i + 50).join(';');
@@ -123,7 +134,7 @@ jobs:
                 if (qData.items) qData.items.forEach(q => { qMap[q.question_id] = q; });
               }
 
-              return data.items.map(a => {
+              return allAnswerItems.map(a => {
                 const q = qMap[a.question_id] || {};
                 const title = decodeHtml(q.title || `Solution to Question #${a.question_id}`);
                 const tags = (q.tags || ['c#', 'architecture']).map(t => t.toUpperCase());
@@ -219,12 +230,7 @@ jobs:
             console.log('Dynamically searching and parsing live LinkedIn posts for Baljeetsingh Sucharia...');
             
             const searchQueries = [
-              'site:linkedin.com "baljeetsingh sucharia"',
-              '"baljeetsingh sucharia" linkedin',
-              'site:linkedin.com/posts/baljeetsingh_',
-              'site:linkedin.com/posts/baljeetsinghsucharia_',
-              'site:linkedin.com/posts/ "baljeetsingh sucharia"',
-              'site:linkedin.com/posts/ "baljeetsingh"'
+              'site:linkedin.com "baljeetsingh sucharia"'
             ];
 
             const candidateLinks = new Set();
@@ -339,8 +345,8 @@ jobs:
               author: 'Baljeetsingh Sucharia',
               totalItems: allItems.length,
               userProfiles: {
-                linkedin: 'https://www.linkedin.com/in/baljeetsinghsucharia/',
-                stackoverflow: `https://stackoverflow.com/users/${STACK_OVERFLOW_USER_ID}/baljeetsingh-sucharia`,
+                linkedin: 'https://www.linkedin.com/in/baljeetsingh/',
+                stackoverflow: `https://stackoverflow.com/users/${STACK_OVERFLOW_USER_ID}/baljeetsingh-sucharia?tab=answers`,
                 medium: `https://medium.com/@${MEDIUM_USERNAME}`,
                 blog: 'https://blog.baljeetsingh.net'
               },
