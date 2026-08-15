@@ -129,18 +129,23 @@ jobs:
                 const tags = (q.tags || ['c#', 'architecture']).map(t => t.toUpperCase());
                 const score = a.score || 0;
                 const votes = score > 0 ? `+${score}` : `${score}`;
-                const publishedAt = a.creation_date ? new Date(a.creation_date * 1000).toISOString() : new Date('2014-01-01').toISOString();
+                
+                // Strictly use original creation_date (never last_activity_date or last_edit_date)
+                const createdDateObj = a.creation_date ? new Date(a.creation_date * 1000) : new Date('2014-01-01');
+                const publishedAt = createdDateObj.toISOString();
+                const formattedCreationDate = createdDateObj.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 
                 return {
                   type: 'stackoverflow',
                   title: title,
                   url: `https://stackoverflow.com/a/${a.answer_id}`,
-                  date: 'Stack Overflow Solution',
+                  date: formattedCreationDate,
                   publishedAt: publishedAt,
+                  createdDate: publishedAt,
                   votes: votes,
                   score: score,
                   accepted: !!a.is_accepted,
-                  snippet: `Verified Stack Overflow solution by Baljeetsingh Sucharia (${votes} votes) covering ${tags.slice(0, 3).join(', ')}.`,
+                  snippet: `Verified Stack Overflow solution created in ${formattedCreationDate} by Baljeetsingh Sucharia (${votes} votes) covering ${tags.slice(0, 3).join(', ')}.`,
                   labels: tags.slice(0, 3)
                 };
               });
