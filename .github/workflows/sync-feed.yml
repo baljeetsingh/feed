@@ -234,6 +234,31 @@ jobs:
             }
           }
 
+          function cleanTitle(raw, url, isFb) {
+            let t = decodeHtml(raw || '');
+            t = t.replace(/\s*\|\s*(Baljeetsingh.*|LinkedIn|Facebook)$/i, '').trim();
+            if (t.toLowerCase().includes('century ke raja')) {
+              return '21st Century Ke Raja Rani Ki Kahani (Cyber Safety Awareness)';
+            }
+            if (url.includes('7366853265990381568')) return 'Bangalore AI Hackathon, Events & Mentoring';
+            if (url.includes('7244186317029359616')) return 'Microsoft ChatGPT & Data Privacy Controls in AI';
+            if (t.startsWith('#')) {
+              const tags = t.split(/\s+/).filter(w => w.startsWith('#')).map(w => w.replace(/^#/, ''));
+              if (tags.length > 0) {
+                t = tags.map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(', ');
+              }
+            }
+            if (!t || t.length < 3) {
+              let slug = url.split('/posts/')[1] || '';
+              slug = slug.split('-activity-')[0].replace(/^baljeetsingh_/, '').replace(/^baljeetsinghsucharia_/, '').replace(/-/g, ' ');
+              t = slug.replace(/\b\w/g, l => l.toUpperCase()).trim();
+            }
+            if (!t || t.length < 3) {
+              return isFb ? 'Cyber Safety & Tech Story' : 'Engineering & Leadership Insights';
+            }
+            return t;
+          }
+
           async function fetchLinkedInArticles() {
             console.log('Dynamically searching and parsing live social posts for Baljeetsingh Sucharia...');
             
@@ -300,10 +325,16 @@ jobs:
 
             for (const url of candidateLinks) {
               try {
+                const isFacebook = url.includes('facebook.com');
+                const userAgent = isFacebook ?
+                  'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)' :
+                  'LinkedInBot/1.0 (compatible; Mozilla/5.0; Apache-HttpClient +http://www.linkedin.com)';
+
                 // Live HTTP fetch to inspect HTML and extract direct post photo
                 const headRes = await fetch(url, {
                   headers: {
-                    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+                    'User-Agent': userAgent,
+                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
                   },
                   redirect: 'follow'
                 });
@@ -329,20 +360,11 @@ jobs:
                   }
                 }
 
-                const isFacebook = url.includes('facebook.com');
-
-                // Dynamic Title extraction from post slug or OG title
-                let title = '';
-                if (isFacebook) {
-                  const ogTitleMatch = html.match(/<meta\s+(?:property|name)=["']og:title["']\s+content=["']([^"']+)["']/i);
-                  title = ogTitleMatch ? ogTitleMatch[1].replace(/&amp;/g, '&').trim() : 'Baljeetsingh Sucharia Facebook Dispatch';
-                } else {
-                  let slug = url.split('/posts/')[1] || '';
-                  slug = slug.split('-activity-')[0].replace(/^baljeetsingh_/, '').replace(/^baljeetsinghsucharia_/, '').replace(/-/g, ' ');
-                  title = slug.replace(/\b\w/g, l => l.toUpperCase()).trim();
-                }
-                
-                if (!title || title.length < 3) title = 'Baljeetsingh Sucharia Tech & Leadership Dispatch';
+                // Dynamic Title extraction from OpenGraph or slug
+                const ogTitleMatch = html.match(/<meta\s+(?:property|name)=["']og:title["']\s+content=["']([^"']+)["']/i) ||
+                                     html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:title["']/i);
+                const rawTitle = ogTitleMatch ? ogTitleMatch[1] : '';
+                const title = cleanTitle(rawTitle, url, isFacebook);
                 
                 if (seenTitles.has(title.toLowerCase())) continue;
                 seenTitles.add(title.toLowerCase());
@@ -399,6 +421,9 @@ jobs:
             allItems.forEach((item, index) => {
               if (!item.cover) {
                 item.cover = UNIQUE_PHOTO_POOL[index % UNIQUE_PHOTO_POOL.length];
+              }
+              if (!item.image) {
+                item.image = item.cover;
               }
             });
 
