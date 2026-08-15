@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-08-15T06:50:31.035Z",
+  "updatedAt": "2026-08-15T06:56:10.418Z",
   "author": "Baljeetsingh Sucharia",
   "totalItems": 69,
   "userProfiles": {
-    "linkedin": "https://www.linkedin.com/in/baljeetsingh/",
+    "linkedin": "https://www.linkedin.com/in/baljeetsinghsucharia/",
     "stackoverflow": "https://stackoverflow.com/users/1415364/baljeetsingh-sucharia",
     "medium": "https://medium.com/@baljeetsingh",
     "blog": "https://blog.baljeetsingh.net"
@@ -11,72 +11,85 @@
   "items": [
     {
       "type": "linkedin",
-      "title": "High Throughput Data Streaming Balancing Baljeetsingh",
-      "url": "https://www.linkedin.com/pulse/high-throughput-data-streaming-balancing-baljeetsingh-sucharia/",
-      "snippet": "Strategic dispatch by Baljeetsingh Sucharia on high throughput data streaming balancing baljeetsingh, leadership, and enterprise engineering systems.",
+      "title": "How To Make Your Linkedin Profile Stand",
+      "url": "https://blog.baljeetsingh.net/2025/07/how-to-make-your-linkedin-profile-stand.html",
+      "snippet": "Strategic dispatch by Baljeetsingh Sucharia on how to make your linkedin profile stand, product strategy, and engineering systems.",
       "date": "LinkedIn Article",
-      "publishedAt": "2026-08-15T06:50:30.645Z",
+      "publishedAt": "2026-08-15T06:56:10.417Z",
       "labels": [
         "LinkedIn",
-        "Engineering",
-        "Insights"
+        "Leadership"
       ],
       "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
-      "title": "How To Make Your Linkedin Profile Stand",
-      "url": "https://blog.baljeetsingh.net/2025/07/how-to-make-your-linkedin-profile-stand.html",
-      "snippet": "Strategic dispatch by Baljeetsingh Sucharia on how to make your linkedin profile stand, leadership, and enterprise engineering systems.",
+      "title": "Baljeetsinghsucharia",
+      "url": "https://www.linkedin.com/in/baljeetsinghsucharia/",
+      "snippet": "Strategic dispatch by Baljeetsingh Sucharia on baljeetsinghsucharia, product strategy, and engineering systems.",
       "date": "LinkedIn Article",
-      "publishedAt": "2026-08-15T06:50:28.671Z",
+      "publishedAt": "2026-08-15T06:56:09.748Z",
       "labels": [
         "LinkedIn",
-        "Leadership"
+        "Engineering",
+        "Insights"
       ],
       "cover": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
-      "title": "Leadership & Strategic Technology Insights",
-      "url": "https://www.linkedin.com/in/baljeetsingh/recent-activity/articles/",
-      "snippet": "Strategic dispatch by Baljeetsingh Sucharia on leadership & strategic technology insights, leadership, and enterprise engineering systems.",
+      "title": "All",
+      "url": "https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/all/",
+      "snippet": "Strategic dispatch by Baljeetsingh Sucharia on all, product strategy, and engineering systems.",
       "date": "LinkedIn Article",
-      "publishedAt": "2026-08-15T06:50:27.993Z",
+      "publishedAt": "2026-08-15T06:56:09.558Z",
       "labels": [
         "LinkedIn",
-        "Leadership"
+        "Engineering",
+        "Insights"
       ],
       "cover": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
-      "title": "Architecting Bespoke AI Systems: Moving Beyond Off-The-Shelf Model Wrappers",
-      "url": "https://www.linkedin.com/in/baljeetsingh/recent-activity/articles/",
-      "snippet": "Why mission-critical enterprise workflows require deterministic validation, private knowledge retrieval pipelines, and bespoke orchestration instead of generic wrapper tools.",
+      "title": "Leadership & Strategic Technology Insights",
+      "url": "https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/articles/",
+      "snippet": "Strategic dispatch by Baljeetsingh Sucharia on leadership & strategic technology insights, product strategy, and engineering systems.",
       "date": "LinkedIn Article",
-      "publishedAt": "2026-02-10T10:00:00.000Z",
+      "publishedAt": "2026-08-15T06:56:09.337Z",
       "labels": [
-        "AI",
-        "Architecture",
-        "Strategy",
+        "LinkedIn",
         "Leadership"
       ],
       "cover": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
-      "title": "Strategic Tech Roadmaps: Transitioning Enterprise Monoliths to Event-Driven Workflows",
-      "url": "https://www.linkedin.com/in/baljeetsingh/recent-activity/posts/",
-      "snippet": "A pragmatic blueprint for engineering leaders modernizing legacy codebases while maintaining continuous delivery SLAs and data consistency.",
-      "date": "Recent Dispatch",
-      "publishedAt": "2025-11-18T10:00:00.000Z",
+      "title": "Build with Logic and Lead with Legacy: An Executive Framework for Modern Engineering Leaders",
+      "url": "https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/articles/",
+      "snippet": "Core leadership principles by Baljeetsingh Sucharia on balancing algorithmic discipline, technical depth, and lasting organizational impact.",
+      "date": "LinkedIn Article",
+      "publishedAt": "2026-02-10T10:00:00.000Z",
       "labels": [
-        "Architecture",
         "Leadership",
-        "DevOps"
+        "Strategy",
+        "Culture"
       ],
       "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "linkedin",
+      "title": "Product Strategy in the AI Era: Moving from Feature Roadmaps to Autonomous Agentic Outcomes",
+      "url": "https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/posts/",
+      "snippet": "How product leaders must evolve from shipping static user interfaces to orchestrating multi-agent workflows and deterministic AI pipelines.",
+      "date": "Recent Dispatch",
+      "publishedAt": "2025-12-04T10:00:00.000Z",
+      "labels": [
+        "AI",
+        "ProductStrategy",
+        "Innovation"
+      ],
+      "cover": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -95,35 +108,49 @@
         "WEB-SERVICES",
         "FILE-EXTENSION"
       ],
-      "cover": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "type": "linkedin",
-      "title": "How to Make Your LinkedIn Profile Stand Out for Executive Roles",
-      "url": "https://blog.baljeetsingh.net/2025/07/how-to-make-your-linkedin-profile-stand.html",
-      "snippet": "Key strategies for positioning technical leadership, architecture achievements, and enterprise value on professional profiles.",
-      "date": "Leadership Note",
-      "publishedAt": "2025-07-15T10:00:00.000Z",
-      "labels": [
-        "Career",
-        "Leadership",
-        "Personal-Brand"
-      ],
       "cover": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
-      "title": "The Cognitive Tech Stack: Vector Pipelines, Private Graphs & Knowledge Retrieval",
-      "url": "https://www.linkedin.com/in/baljeetsingh/recent-activity/articles/",
-      "snippet": "How combining domain ontology graphs with dense vector search delivers zero-hallucination semantic search across petabyte-scale document archives.",
-      "date": "LinkedIn Article",
-      "publishedAt": "2025-05-22T10:00:00.000Z",
+      "title": "Mentoring the Next Generation of Builders: Guiding Hackathon Teams to Scalable Solutions",
+      "url": "https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/posts/",
+      "snippet": "Lessons and coaching strategies from guiding university students and startup founders through Smart India Hackathon and rapid product prototyping.",
+      "date": "Mentorship Note",
+      "publishedAt": "2025-09-18T10:00:00.000Z",
       "labels": [
-        "AI",
-        "Data",
-        "Search"
+        "Mentorship",
+        "Leadership",
+        "Hackathon"
       ],
       "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "linkedin",
+      "title": "How to Position Technical Leadership and Enterprise Impact on Professional Profiles",
+      "url": "https://blog.baljeetsingh.net/2025/07/how-to-make-your-linkedin-profile-stand.html",
+      "snippet": "Actionable strategies for engineering managers and senior architects to articulate enterprise business value and technical achievements.",
+      "date": "Strategic Guide",
+      "publishedAt": "2025-07-15T10:00:00.000Z",
+      "labels": [
+        "Career",
+        "Leadership",
+        "PersonalBrand"
+      ],
+      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "linkedin",
+      "title": "The AI Consultant's Playbook: Deterministic Pipelines, Private Knowledge Graphs & Custom Tooling",
+      "url": "https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/articles/",
+      "snippet": "Why enterprise GenAI implementations require private knowledge retrieval graphs and strict validation rather than generic API wrappers.",
+      "date": "Architecture Note",
+      "publishedAt": "2025-06-15T10:00:00.000Z",
+      "labels": [
+        "AI",
+        "Architecture",
+        "DataSystems"
+      ],
+      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -142,61 +169,33 @@
         "TYPESCRIPT",
         "SVELTE"
       ],
-      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "type": "linkedin",
-      "title": "Building High-Trust Engineering Cultures in Distributed Organizations",
-      "url": "https://www.linkedin.com/in/baljeetsingh/recent-activity/posts/",
-      "snippet": "Principles for fostering autonomy, psychological safety, and radical accountability across remote software engineering teams.",
-      "date": "Leadership Dispatch",
-      "publishedAt": "2025-03-14T10:00:00.000Z",
-      "labels": [
-        "Leadership",
-        "Culture",
-        "Management"
-      ],
-      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
-    },
-    {
-      "type": "linkedin",
-      "title": "High-Throughput Data Streaming: Balancing Low Latency and Strict Ordering",
-      "url": "https://www.linkedin.com/in/baljeetsingh/recent-activity/articles/",
-      "snippet": "Architectural tradeoffs in distributed pub/sub pipelines, partition strategies, and backpressure handling at scale.",
-      "date": "Architecture Note",
-      "publishedAt": "2024-12-05T10:00:00.000Z",
-      "labels": [
-        "DataSystems",
-        "Architecture",
-        "Engineering"
-      ],
       "cover": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
-      "title": "The Evolution of Software Engineering: From Handcrafted Code to Agentic Orchestration",
-      "url": "https://www.linkedin.com/in/baljeetsingh/recent-activity/posts/",
-      "snippet": "How autonomous coding agents and multi-agent coordination frameworks are fundamentally reshaping product delivery lifecycles.",
-      "date": "Strategic Vision",
-      "publishedAt": "2024-09-20T10:00:00.000Z",
+      "title": "Transitioning Enterprise Monoliths to Event-Driven Cloud Workflows",
+      "url": "https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/articles/",
+      "snippet": "Pragmatic blueprints for decomposing mission-critical legacy architectures into scalable distributed event systems without downtime.",
+      "date": "Engineering Dispatch",
+      "publishedAt": "2025-03-22T10:00:00.000Z",
       "labels": [
-        "AI",
-        "Engineering",
-        "Innovation"
+        "Architecture",
+        "Cloud",
+        "Engineering"
       ],
       "cover": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
-      "title": "Designing Fault-Tolerant Enterprise Systems: Patterns That Endure",
-      "url": "https://www.linkedin.com/in/baljeetsingh/recent-activity/articles/",
-      "snippet": "Core resilience patterns—circuit breakers, idempotency keys, and graceful degradation—that prevent cascading outages.",
-      "date": "LinkedIn Article",
-      "publishedAt": "2024-06-11T10:00:00.000Z",
+      "title": "Designing Fault-Tolerant Distributed Data Architectures: Patterns from the Field",
+      "url": "https://www.linkedin.com/in/baljeetsinghsucharia/recent-activity/posts/",
+      "snippet": "Resilience patterns, idempotency keys, and transaction guarantees in high-throughput enterprise systems.",
+      "date": "Technical Note",
+      "publishedAt": "2024-11-10T10:00:00.000Z",
       "labels": [
+        "DataSystems",
         "Architecture",
-        "Reliability",
-        "Systems"
+        "Reliability"
       ],
       "cover": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
     },
