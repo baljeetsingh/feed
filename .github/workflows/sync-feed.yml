@@ -230,12 +230,7 @@ jobs:
             console.log('Dynamically searching and parsing live LinkedIn posts for Baljeetsingh Sucharia...');
             
             const searchQueries = [
-              'site:linkedin.com "baljeetsingh sucharia"',
-              '"baljeetsingh sucharia" linkedin',
-              'site:linkedin.com/posts/baljeetsingh_',
-              'site:linkedin.com/posts/baljeetsinghsucharia_',
-              'site:linkedin.com/posts/ "baljeetsingh sucharia"',
-              'site:linkedin.com/posts/ "baljeetsingh"'
+              'site:linkedin.com "baljeetsingh sucharia"'
             ];
 
             const candidateLinks = new Set();
