@@ -230,7 +230,12 @@ jobs:
             console.log('Dynamically searching and parsing live LinkedIn posts for Baljeetsingh Sucharia...');
             
             const searchQueries = [
-              'site:linkedin.com "baljeetsingh sucharia"'
+              'site:linkedin.com "baljeetsingh sucharia"',
+              '"baljeetsingh sucharia" linkedin',
+              'site:linkedin.com/posts/baljeetsingh_',
+              'site:linkedin.com/posts/baljeetsinghsucharia_',
+              'site:linkedin.com/posts/ "baljeetsingh sucharia"',
+              'site:linkedin.com/posts/ "baljeetsingh"'
             ];
 
             const candidateLinks = new Set();
@@ -345,7 +350,7 @@ jobs:
               author: 'Baljeetsingh Sucharia',
               totalItems: allItems.length,
               userProfiles: {
-                linkedin: 'https://www.linkedin.com/in/baljeetsingh/',
+                linkedin: 'https://www.linkedin.com/in/baljeetsinghsucharia/',
                 stackoverflow: `https://stackoverflow.com/users/${STACK_OVERFLOW_USER_ID}/baljeetsingh-sucharia?tab=answers`,
                 medium: `https://medium.com/@${MEDIUM_USERNAME}`,
                 blog: 'https://blog.baljeetsingh.net'
