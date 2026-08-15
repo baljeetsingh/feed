@@ -230,7 +230,8 @@ jobs:
             console.log('Dynamically searching and parsing live LinkedIn posts for Baljeetsingh Sucharia...');
             
             const searchQueries = [
-              'site:linkedin.com "baljeetsingh sucharia"'
+              'site:linkedin.com "baljeetsingh sucharia"',
+              'site:facebook.com "baljeetsingh sucharia"'
             ];
 
             const candidateLinks = new Set();
@@ -251,7 +252,7 @@ jobs:
                     let link = decodeURIComponent(m[1]).split('?')[0];
                     link = link.replace(/https?:\/\/[a-z]{2,3}\.linkedin\.com/, 'https://www.linkedin.com');
                     
-                    if ((link.includes('/posts/baljeetsingh_') || link.includes('/posts/baljeetsinghsucharia_')) && link.includes('-activity-')) {
+                    if ((link.includes('linkedin.com/posts/') || link.includes('facebook.com/')) && (link.includes('-activity-') || link.includes('/posts/') || link.includes('/photos/') || link.includes('/videos/') || link.includes('/reels/'))) {
                       candidateLinks.add(link);
                     }
                   }
@@ -261,14 +262,14 @@ jobs:
               }
             }
 
-            console.log(`Discovered ${candidateLinks.size} authentic LinkedIn post URLs dynamically from search engine. Verifying and parsing...`);
+            console.log(`Discovered ${candidateLinks.size} authentic social post URLs dynamically. Extracting live post photos and metadata...`);
 
             const verifiedItems = [];
             const seenTitles = new Set();
 
             for (const url of candidateLinks) {
               try {
-                // Live HTTP status check
+                // Live HTTP fetch to inspect HTML and extract direct post photo
                 const headRes = await fetch(url, {
                   headers: {
                     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
@@ -281,10 +282,35 @@ jobs:
                   continue;
                 }
 
-                // Dynamic Title extraction from post slug
-                let slug = url.split('/posts/')[1] || '';
-                slug = slug.split('-activity-')[0].replace(/^baljeetsingh_/, '').replace(/^baljeetsinghsucharia_/, '').replace(/-/g, ' ');
-                let title = slug.replace(/\b\w/g, l => l.toUpperCase()).trim();
+                const html = await headRes.text();
+
+                // 📸 Extract direct post photo from OpenGraph / Twitter metadata
+                let postPhoto = null;
+                const ogImageMatch = html.match(/<meta\s+(?:property|name)=["']og:image["']\s+content=["']([^"']+)["']/i) ||
+                                     html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:image["']/i) ||
+                                     html.match(/<meta\s+(?:property|name)=["']twitter:image["']\s+content=["']([^"']+)["']/i);
+                
+                if (ogImageMatch) {
+                  const candidateImg = ogImageMatch[1].replace(/&amp;/g, '&');
+                  // Filter out generic social network static icons
+                  if (!candidateImg.includes('static.licdn.com/aero-v1/sc/h/') && !candidateImg.includes('static.xx.fbcdn.net/rsrc.php')) {
+                    postPhoto = candidateImg;
+                  }
+                }
+
+                const isFacebook = url.includes('facebook.com');
+
+                // Dynamic Title extraction from post slug or OG title
+                let title = '';
+                if (isFacebook) {
+                  const ogTitleMatch = html.match(/<meta\s+(?:property|name)=["']og:title["']\s+content=["']([^"']+)["']/i);
+                  title = ogTitleMatch ? ogTitleMatch[1].replace(/&amp;/g, '&').trim() : 'Baljeetsingh Sucharia Facebook Dispatch';
+                } else {
+                  let slug = url.split('/posts/')[1] || '';
+                  slug = slug.split('-activity-')[0].replace(/^baljeetsingh_/, '').replace(/^baljeetsinghsucharia_/, '').replace(/-/g, ' ');
+                  title = slug.replace(/\b\w/g, l => l.toUpperCase()).trim();
+                }
+                
                 if (!title || title.length < 3) title = 'Baljeetsingh Sucharia Tech & Leadership Dispatch';
                 
                 if (seenTitles.has(title.toLowerCase())) continue;
@@ -292,7 +318,7 @@ jobs:
 
                 // Dynamic Labels extraction
                 const lower = (title + ' ' + url).toLowerCase();
-                const labels = ['LinkedIn'];
+                const labels = [isFacebook ? 'Facebook' : 'LinkedIn'];
                 if (lower.match(/\b(ai|intelligence|futureofwork|llm)\b/)) labels.push('AI');
                 if (lower.match(/\b(architecture|caching|cloud|systems|opensource|dpg|dpdpa)\b/)) labels.push('Architecture');
                 if (lower.match(/\b(leadership|coach|leaders|mindset|career|gratitude|womensday)\b/)) labels.push('Leadership');
@@ -300,25 +326,27 @@ jobs:
                 if (labels.length === 1) labels.push('Engineering', 'Insights');
 
                 // Dynamic date formatting
-                let dateStr = 'LinkedIn Post';
+                let dateStr = isFacebook ? 'Facebook Post' : 'LinkedIn Post';
                 let isoDate = new Date().toISOString();
 
                 verifiedItems.push({
                   type: 'linkedin',
                   title: title,
                   url: url,
-                  snippet: `LinkedIn dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering architecture.`,
+                  cover: postPhoto,
+                  image: postPhoto,
+                  snippet: `${isFacebook ? 'Facebook' : 'LinkedIn'} dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering architecture.`,
                   date: dateStr,
                   publishedAt: isoDate,
                   labels: labels
                 });
-                console.log(`  ✅ Verified: "${title}"`);
+                console.log(`  ✅ Verified: "${title}" ${postPhoto ? '(📸 Live Post Photo Extracted)' : ''}`);
               } catch (e) {
                 // Ignore unreachable links
               }
             }
 
-            console.log(`Successfully parsed ${verifiedItems.length} live LinkedIn items dynamically.`);
+            console.log(`Successfully parsed ${verifiedItems.length} live social items dynamically.`);
             return verifiedItems;
           }
 
@@ -336,8 +364,11 @@ jobs:
               return tB - tA;
             });
 
+            // Use extracted direct post photo, or fallback to curated photo pool
             allItems.forEach((item, index) => {
-              item.cover = UNIQUE_PHOTO_POOL[index % UNIQUE_PHOTO_POOL.length];
+              if (!item.cover) {
+                item.cover = UNIQUE_PHOTO_POOL[index % UNIQUE_PHOTO_POOL.length];
+              }
             });
 
             const outputPayload = {
@@ -345,7 +376,7 @@ jobs:
               author: 'Baljeetsingh Sucharia',
               totalItems: allItems.length,
               userProfiles: {
-                linkedin: 'https://www.linkedin.com/in/baljeetsinghsucharia/',
+                linkedin: 'https://www.linkedin.com/in/baljeetsingh/',
                 stackoverflow: `https://stackoverflow.com/users/${STACK_OVERFLOW_USER_ID}/baljeetsingh-sucharia?tab=answers`,
                 medium: `https://medium.com/@${MEDIUM_USERNAME}`,
                 blog: 'https://blog.baljeetsingh.net'
