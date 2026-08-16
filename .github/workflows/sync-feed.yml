@@ -274,10 +274,8 @@ jobs:
             } catch (e) {}
 
             const searchQueries = [
-              'site:linkedin.com/in/baljeetsingh',
-              'site:facebook.com/baljeetsingh.sucharia',
-              'site:facebook.com/baljeetsinghit'
-            ];
+              'site:linkedin.com "baljeetsingh sucharia"',
+              'site:facebook.com "baljeetsingh.sucharia"'            ];
 
             const candidateLinks = new Set();
 
@@ -306,8 +304,8 @@ jobs:
                     const lLower = link.toLowerCase();
 
                     if (isLi) {
-                      if (lLower.includes('/posts/baljeetsingh_') || 
-                          lLower.includes('/in/baljeetsingh') || 
+                      if (lLower.match(/\/in\/baljeetsingh(\/|$)/) || 
+                          lLower.includes('/posts/baljeetsingh_') || 
                           lLower.includes('activity-7366853265990381568') || 
                           lLower.includes('activity-7244186317029359616')) {
                         isAuthentic = true;
