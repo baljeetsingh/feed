@@ -275,12 +275,16 @@ jobs:
 
             const searchQueries = [
               'site:linkedin.com "baljeetsingh sucharia"',
-              'site:facebook.com "baljeetsingh.sucharia"'            ];
+              'site:linkedin.com/in/baljeetsingh',
+              'site:facebook.com "baljeetsingh.sucharia"',
+              'site:facebook.com/baljeetsingh.sucharia',
+              'site:facebook.com/baljeetsinghit'
+            ];
 
             const candidateLinks = new Set();
 
             for (const q of searchQueries) {
-              for (let page = 1; page <= 51; page += 10) {
+              for (let page = 1; page <= 61; page += 10) {
                 try {
                   const searchUrl = `https://search.yahoo.com/search?p=${encodeURIComponent(q)}&b=${page}`;
                   const res = await fetch(searchUrl, {
@@ -328,17 +332,7 @@ jobs:
               }
             }
 
-            const fallbackLinks = [
-              'https://www.linkedin.com/posts/baljeetsingh_the-caching-conundrum-a-tale-of-a-web-apps-activity-7024012194337992705-xnDy',
-              'https://www.linkedin.com/posts/baljeetsingh_gratitude-careergrowth-newopportunities-activity-7284906755254276097-Dcox',
-              'https://www.linkedin.com/posts/activity-7366853265990381568-EfvY',
-              'https://www.linkedin.com/feed/update/urn:li:activity:7244186317029359616/',
-              'https://www.facebook.com/baljeetsingh.sucharia/photos/2%EF%B8%8F%E2%83%A31%EF%B8%8F%E2%83%A3-century-ke-raja-rani-ki-kahani-share-your-tips-to-remain-safe-cybersafety/10160409422479022/',
-              'https://www.facebook.com/baljeetsinghit/videos/i-am-delighted-to-announce-that-i-have-joined-tekdi-technologies-pvt-ltd-as-assi/1438814779837420/'
-            ];
-            fallbackLinks.forEach(l => candidateLinks.add(l));
-
-            console.log(`Discovered ${candidateLinks.size} authentic social post URLs dynamically. Extracting live post photos and metadata...`);
+            console.log(`Discovered ${candidateLinks.size} authentic social post URLs dynamically (Zero fallbacks). Extracting live post photos and metadata...`);
 
             const verifiedItems = [];
             const seenTitles = new Set();
@@ -431,6 +425,13 @@ jobs:
             ]);
 
             const allItems = [...liItems, ...medItems, ...soItems];
+
+            // 🛡️ Safety Guard: Never overwrite streams.json if zero items are returned
+            if (!allItems || allItems.length === 0) {
+              console.error('❌ Error: No stream items were fetched. Aborting write to protect against empty feed.');
+              process.exit(1);
+            }
+
             allItems.sort((a, b) => {
               const tA = a.publishedAt ? Date.parse(a.publishedAt) : 0;
               const tB = b.publishedAt ? Date.parse(b.publishedAt) : 0;
