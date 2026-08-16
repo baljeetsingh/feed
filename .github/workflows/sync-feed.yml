@@ -240,6 +240,12 @@ jobs:
             if (t.toLowerCase().includes('century ke raja')) {
               return '21st Century Ke Raja Rani Ki Kahani (Cyber Safety Awareness)';
             }
+            if (url.includes('1438814779837420') || t.toLowerCase().includes('tekdi technologies')) {
+              return 'Leadership Announcement: Joined Tekdi Technologies as Assistant Vice President';
+            }
+            if (url.includes('10221592087990245') || t.toLowerCase().includes('me to we')) {
+              return 'Journey from Me to We - Life & Professional Gratitude';
+            }
             if (url.includes('7366853265990381568')) return 'Bangalore AI Hackathon, Events & Mentoring';
             if (url.includes('7244186317029359616')) return 'Microsoft ChatGPT & Data Privacy Controls in AI';
             if (t.startsWith('#')) {
@@ -314,7 +320,9 @@ jobs:
               'https://www.linkedin.com/posts/baljeetsingh_gratitude-careergrowth-newopportunities-activity-7284906755254276097-Dcox',
               'https://www.linkedin.com/posts/activity-7366853265990381568-EfvY',
               'https://www.linkedin.com/feed/update/urn:li:activity:7244186317029359616/',
-              'https://www.facebook.com/baljeetsingh.sucharia/photos/2%EF%B8%8F%E2%83%A31%EF%B8%8F%E2%83%A3-century-ke-raja-rani-ki-kahani-share-your-tips-to-remain-safe-cybersafety/10160409422479022/'
+              'https://www.facebook.com/baljeetsingh.sucharia/photos/2%EF%B8%8F%E2%83%A31%EF%B8%8F%E2%83%A3-century-ke-raja-rani-ki-kahani-share-your-tips-to-remain-safe-cybersafety/10160409422479022/',
+              'https://www.facebook.com/baljeetsinghit/videos/i-am-delighted-to-announce-that-i-have-joined-tekdi-technologies-pvt-ltd-as-assi/1438814779837420/',
+              'https://www.facebook.com/ShwetaSucharia/posts/loved-every-moment-of-journey-from-me-to-we-with-you-baljeetsingh-sucharia-grate/10221592087990245/'
             ];
             fallbackLinks.forEach(l => candidateLinks.add(l));
 
