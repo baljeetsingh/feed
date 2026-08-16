@@ -243,9 +243,6 @@ jobs:
             if (url.includes('1438814779837420') || t.toLowerCase().includes('tekdi technologies')) {
               return 'Leadership Announcement: Joined Tekdi Technologies as Assistant Vice President';
             }
-            if (url.includes('10221592087990245') || t.toLowerCase().includes('me to we')) {
-              return 'Journey from Me to We - Life & Professional Gratitude';
-            }
             if (url.includes('7366853265990381568')) return 'Bangalore AI Hackathon, Events & Mentoring';
             if (url.includes('7244186317029359616')) return 'Microsoft ChatGPT & Data Privacy Controls in AI';
             if (t.startsWith('#')) {
@@ -277,10 +274,9 @@ jobs:
             } catch (e) {}
 
             const searchQueries = [
-              'site:linkedin.com "baljeetsingh sucharia"',
+              'site:linkedin.com/in/baljeetsingh',
               'site:facebook.com/baljeetsingh.sucharia',
-              'site:facebook.com/baljeetsingh.it',
-              'site:facebook.com "baljeetsingh sucharia"'
+              'site:facebook.com/baljeetsinghit'
             ];
 
             const candidateLinks = new Set();
@@ -302,10 +298,29 @@ jobs:
                     let link = safeDecode(m[1]).split('?')[0];
                     link = link.replace(/https?:\/\/[a-z0-9-]+\.linkedin\.com/, 'https://www.linkedin.com');
                     
-                    const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/');
+                    const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/') || link.includes('linkedin.com/in/baljeetsingh');
                     const isFb = link.includes('facebook.com/') && (link.includes('/photos/') || link.includes('/posts/') || link.includes('/videos/') || link.includes('/reels/') || link.includes('story.php'));
 
-                    if (isLi || isFb) {
+                    // Strict Author Handle Validation: Only Baljeetsingh accounts (/in/baljeetsingh only)
+                    let isAuthentic = false;
+                    const lLower = link.toLowerCase();
+
+                    if (isLi) {
+                      if (lLower.includes('/posts/baljeetsingh_') || 
+                          lLower.includes('/in/baljeetsingh') || 
+                          lLower.includes('activity-7366853265990381568') || 
+                          lLower.includes('activity-7244186317029359616')) {
+                        isAuthentic = true;
+                      }
+                    } else if (isFb) {
+                      if (lLower.includes('/baljeetsingh.sucharia') || 
+                          lLower.includes('/baljeetsinghit') || 
+                          lLower.includes('/baljeetsingh.it')) {
+                        isAuthentic = true;
+                      }
+                    }
+
+                    if (isAuthentic) {
                       candidateLinks.add(link);
                     }
                   }
@@ -321,8 +336,7 @@ jobs:
               'https://www.linkedin.com/posts/activity-7366853265990381568-EfvY',
               'https://www.linkedin.com/feed/update/urn:li:activity:7244186317029359616/',
               'https://www.facebook.com/baljeetsingh.sucharia/photos/2%EF%B8%8F%E2%83%A31%EF%B8%8F%E2%83%A3-century-ke-raja-rani-ki-kahani-share-your-tips-to-remain-safe-cybersafety/10160409422479022/',
-              'https://www.facebook.com/baljeetsinghit/videos/i-am-delighted-to-announce-that-i-have-joined-tekdi-technologies-pvt-ltd-as-assi/1438814779837420/',
-              'https://www.facebook.com/ShwetaSucharia/posts/loved-every-moment-of-journey-from-me-to-we-with-you-baljeetsingh-sucharia-grate/10221592087990245/'
+              'https://www.facebook.com/baljeetsinghit/videos/i-am-delighted-to-announce-that-i-have-joined-tekdi-technologies-pvt-ltd-as-assi/1438814779837420/'
             ];
             fallbackLinks.forEach(l => candidateLinks.add(l));
 
