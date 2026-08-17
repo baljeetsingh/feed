@@ -35,7 +35,7 @@ jobs:
           const BLOG_FEED_URL = 'https://blog.baljeetsingh.net/feeds/posts/default?alt=json&max-results=50';
           const OUTPUT_PATH = 'streams.json';
           const GOOGLE_API_KEY = (process.env.GOOGLE_SEARCH_API_KEY || '').trim();
-          const GOOGLE_CX = (process.env.GOOGLE_SEARCH_CX || '').trim();
+          const GOOGLE_CX = (process.env.GOOGLE_SEARCH_CX || '50b91f6edf59b4030').trim();
 
           console.log('\n===============================================================');
           console.log('🚀 [STEP 1/4] INITIALIZING FEED AUTOMATION ENGINE');
@@ -73,11 +73,19 @@ jobs:
           function decodeHtml(html) {
             if (!html) return '';
             return html
+              .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => {
+                try { return String.fromCodePoint(parseInt(hex, 16)); } catch(e) { return ''; }
+              })
+              .replace(/&#([0-9]+);/g, (_, dec) => {
+                try { return String.fromCodePoint(parseInt(dec, 10)); } catch(e) { return ''; }
+              })
               .replace(/&quot;/g, '"')
               .replace(/&#39;/g, "'")
               .replace(/&amp;/g, '&')
               .replace(/&lt;/g, '<')
               .replace(/&gt;/g, '>')
+              .replace(/&nbsp;/g, ' ')
+              .replace(/\u00a0/g, ' ')
               .replace(/&#27;/g, "'")
               .replace(/&#x2F;/g, '/')
               .replace(/&#x60;/g, '`')
@@ -216,7 +224,7 @@ jobs:
           }
 
           function cleanTitle(raw, url, isFb) {
-            let t = raw || '';
+            let t = decodeHtml(raw || '');
             t = t.replace(/\s*\|\s*Baljeetsingh\s+Sucharia.*$/i, '')
                  .replace(/\s*\|\s*LinkedIn.*$/i, '')
                  .replace(/\s*\|\s*Facebook.*$/i, '')
@@ -226,12 +234,29 @@ jobs:
                  .trim();
 
             if (url.includes('7244186317029359616')) return 'Microsoft ChatGPT & Data Privacy Controls in AI';
+
+            // If multiline post, extract first clean sentence/line
+            if (t.includes('\n')) {
+              const lines = t.split(/\n+/).map(l => l.trim()).filter(l => l.length > 5 && !l.startsWith('#'));
+              if (lines.length > 0) t = lines[0];
+            }
+
             if (t.startsWith('#')) {
               const tags = t.split(/\s+/).filter(w => w.startsWith('#')).map(w => w.replace(/^#/, ''));
               if (tags.length > 0) {
                 t = tags.map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(', ');
               }
             }
+
+            // Remove trailing hashtags from title
+            t = t.replace(/\s*#[a-zA-Z0-9_-]+/g, '').trim();
+
+            // Truncate overly long single paragraph titles to first clean sentence
+            if (t.length > 100 && t.includes('.')) {
+              const firstSent = t.split('.')[0].trim();
+              if (firstSent.length > 15) t = firstSent;
+            }
+
             if (!t || t.length < 3) {
               let slug = url.split('/posts/')[1] || '';
               slug = slug.split('-activity-')[0].replace(/^baljeetsingh_/, '').replace(/^baljeetsinghsucharia_/, '').replace(/-/g, ' ');
