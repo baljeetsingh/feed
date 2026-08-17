@@ -35,7 +35,7 @@ jobs:
           const BLOG_FEED_URL = 'https://blog.baljeetsingh.net/feeds/posts/default?alt=json&max-results=50';
           const OUTPUT_PATH = 'streams.json';
           const GOOGLE_API_KEY = (process.env.GOOGLE_SEARCH_API_KEY || '').trim();
-          const GOOGLE_CX = (process.env.GOOGLE_SEARCH_CX || '50b91f6edf59b4030').trim();
+          const GOOGLE_CX = (process.env.GOOGLE_SEARCH_CX || '').trim();
 
           console.log('\n===============================================================');
           console.log('🚀 [STEP 1/4] INITIALIZING FEED AUTOMATION ENGINE');
@@ -417,6 +417,8 @@ jobs:
                                  lLower.includes('baljeetsinghcpa') || 
                                  lLower.includes('tejinder-kaur') || 
                                  lLower.includes('baljeet-singh-b992') || 
+                                 lLower.includes('harsh-baljeetsingh-yadav') || 
+                                 lLower.includes('baljeet-singh-32774840') || 
                                  lLower.includes('the-flowry-show') ||
                                  lLower.includes('pulse/snapper') ||
                                  lLower.includes('pulse/arabs') ||
