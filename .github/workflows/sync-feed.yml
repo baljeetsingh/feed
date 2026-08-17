@@ -2,8 +2,8 @@ name: Auto Generate Streams Feed
 
 on:
   schedule:
-    # Runs automatically every day at 00:00 UTC
-    - cron: '0 0 * * *'
+    # Runs automatically every 12 hours
+    - cron: '0 */12 * * *'
   workflow_dispatch: # Allows manual one-click trigger from GitHub Actions tab
 
 permissions:
@@ -23,6 +23,9 @@ jobs:
           node-version: 22
 
       - name: Fetch Live Streams & Generate streams.json
+        env:
+          GOOGLE_SEARCH_API_KEY: ${{ secrets.GOOGLE_SEARCH_API_KEY }}
+          GOOGLE_SEARCH_CX: ${{ secrets.GOOGLE_SEARCH_CX }}
         run: |
           cat << 'EOF' > sync.mjs
           import fs from 'fs';
@@ -31,6 +34,8 @@ jobs:
           const MEDIUM_USERNAME = 'baljeetsingh';
           const BLOG_FEED_URL = 'https://blog.baljeetsingh.net/feeds/posts/default?alt=json&max-results=50';
           const OUTPUT_PATH = 'streams.json';
+          const GOOGLE_API_KEY = process.env.GOOGLE_SEARCH_API_KEY || '';
+          const GOOGLE_CX = process.env.GOOGLE_SEARCH_CX || '50b91f6edf59b4030';
 
           const UNIQUE_PHOTO_POOL = [
             'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
@@ -52,49 +57,7 @@ jobs:
             'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80',
             'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
             'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
-            'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80'
+            'https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80'
           ];
 
           function decodeHtml(html) {
@@ -102,148 +65,128 @@ jobs:
             return html
               .replace(/&quot;/g, '"')
               .replace(/&#39;/g, "'")
+              .replace(/&amp;/g, '&')
               .replace(/&lt;/g, '<')
               .replace(/&gt;/g, '>')
-              .replace(/&amp;/g, '&');
+              .replace(/&#x27;/g, "'")
+              .replace(/&#x2F;/g, '/')
+              .replace(/&#x60;/g, '`')
+              .replace(/&#x3D;/g, '=');
+          }
+
+          function extractPureText(html) {
+            if (!html) return '';
+            let text = html.replace(/<[^>]*>?/gm, ' ');
+            return decodeHtml(text).replace(/\s+/g, ' ').trim();
+          }
+
+          function calculateReadTime(text) {
+            const words = text.trim().split(/\s+/).length;
+            const minutes = Math.max(1, Math.ceil(words / 200));
+            return `${minutes} min read`;
           }
 
           async function fetchStackOverflow() {
-            console.log('Fetching live Stack Overflow answers from https://stackoverflow.com/users/1415364/baljeetsingh-sucharia?tab=answers ...');
+            console.log('⚡ Fetching Stack Overflow answers for User ID:', STACK_OVERFLOW_USER_ID);
+            const items = [];
             try {
-              let page = 1;
-              let allAnswerItems = [];
-              
-              while (true) {
-                const res = await fetch(`https://api.stackexchange.com/2.3/users/${STACK_OVERFLOW_USER_ID}/answers?order=desc&sort=creation&site=stackoverflow&page=${page}&pagesize=100&filter=!9_bDDxJY5`);
-                const data = await res.json();
-                if (data.items && data.items.length > 0) {
-                  allAnswerItems.push(...data.items);
+              const url = `https://api.stackexchange.com/2.3/users/${STACK_OVERFLOW_USER_ID}/answers?order=desc&sort=creation&site=stackoverflow&filter=!9_bDDxJY5`;
+              const res = await fetch(url);
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
+              const data = await res.json();
+              if (data.items) {
+                for (const item of data.items) {
+                  const title = decodeHtml(item.title || 'Technical Answer & Code Solution');
+                  const answerBody = extractPureText(item.body || '');
+                  const snippet = answerBody.length > 30 ?
+                    (answerBody.slice(0, 160) + '...') :
+                    `High-impact engineering answer accepted on Stack Overflow (Score: ${item.score}${item.is_accepted ? ', Accepted' : ''}).`;
+
+                  const dateObj = new Date(item.creation_date * 1000);
+                  const formattedDate = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+                  items.push({
+                    type: 'stackoverflow',
+                    id: `so-${item.answer_id}`,
+                    title: title,
+                    url: `https://stackoverflow.com/a/${item.answer_id}`,
+                    score: item.score,
+                    isAccepted: item.is_accepted,
+                    snippet: snippet,
+                    date: formattedDate,
+                    publishedAt: dateObj.toISOString(),
+                    readTime: calculateReadTime(answerBody),
+                    labels: ['Stack Overflow', 'Engineering', 'Architecture']
+                  });
                 }
-                if (!data.has_more || page >= 5) break;
-                page++;
               }
-
-              if (allAnswerItems.length === 0) return [];
-
-              const qIds = [...new Set(allAnswerItems.map(a => a.question_id))];
-              const qMap = {};
-              for (let i = 0; i < qIds.length; i += 50) {
-                const batchIds = qIds.slice(i, i + 50).join(';');
-                const qRes = await fetch(`https://api.stackexchange.com/2.3/questions/${batchIds}?site=stackoverflow&pagesize=50`);
-                const qData = await qRes.json();
-                if (qData.items) qData.items.forEach(q => { qMap[q.question_id] = q; });
-              }
-
-              return allAnswerItems.map(a => {
-                const q = qMap[a.question_id] || {};
-                const title = decodeHtml(q.title || `Solution to Question #${a.question_id}`);
-                const tags = (q.tags || ['c#', 'architecture']).map(t => t.toUpperCase());
-                const score = a.score || 0;
-                const votes = score > 0 ? `+${score}` : `${score}`;
-                
-                // Strictly use the answer's creation_date (when this answer was submitted)
-                const answerDateObj = a.creation_date ? new Date(a.creation_date * 1000) : new Date('2014-01-01');
-                const publishedAt = answerDateObj.toISOString();
-                const datePart = answerDateObj.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
-                const hours = answerDateObj.getUTCHours();
-                const mins = answerDateObj.getUTCMinutes().toString().padStart(2, '0');
-                const formattedAnswerDate = `answered ${datePart} at ${hours}:${mins}`;
-
-                return {
-                  type: 'stackoverflow',
-                  title: title,
-                  url: `https://stackoverflow.com/a/${a.answer_id}`,
-                  date: formattedAnswerDate,
-                  answerDate: formattedAnswerDate,
-                  publishedAt: publishedAt,
-                  createdDate: publishedAt,
-                  votes: votes,
-                  score: score,
-                  accepted: !!a.is_accepted,
-                  snippet: `Verified Stack Overflow solution (${formattedAnswerDate}) by Baljeetsingh Sucharia (${votes} votes) covering ${tags.slice(0, 3).join(', ')}.`,
-                  labels: tags.slice(0, 3)
-                };
-              });
-            } catch(e) {
-              console.error('SO error:', e);
-              return [];
+            } catch (err) {
+              console.error('Stack Overflow fetch error:', err.message);
             }
+            console.log(`✅ Loaded ${items.length} Stack Overflow answers.`);
+            return items;
           }
 
           async function fetchMedium() {
-            console.log('Fetching live Medium publications...');
+            console.log('⚡ Fetching Medium articles for @' + MEDIUM_USERNAME);
+            const items = [];
             try {
-              const res = await fetch(`https://medium.com/feed/@${MEDIUM_USERNAME}`);
-              const text = await res.text();
-              const items = [];
-              const regex = /<item>[\s\S]*?<title><!\[CDATA\[([\s\S]*?)\]\]><\/title>[\s\S]*?<link>([\s\S]*?)<\/link>[\s\S]*?<pubDate>([\s\S]*?)<\/pubDate>[\s\S]*?<\/item>/g;
-              let match;
-              while ((match = regex.exec(text)) !== null) {
-                const title = decodeHtml(match[1].trim());
-                const url = match[2].trim();
-                const pubDate = match[3].trim();
-                items.push({
-                  type: 'linkedin', // Renders in the Articles stream with high priority
-                  title: title,
-                  url: url,
-                  date: 'Published Article',
-                  publishedAt: new Date(pubDate).toISOString(),
-                  snippet: `Long-form engineering & leadership article by Baljeetsingh Sucharia on ${title}.`,
-                  labels: ['Architecture', 'Leadership', 'Strategy']
-                });
-              }
-              return items;
-            } catch(e) {
-              return [];
-            }
-          }
+              const feedUrl = `https://medium.com/feed/@${MEDIUM_USERNAME}`;
+              const rssApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
+              const res = await fetch(rssApiUrl);
+              if (!res.ok) throw new Error(`HTTP ${res.status}`);
+              const data = await res.json();
+              if (data.status === 'ok' && data.items) {
+                for (const item of data.items) {
+                  const title = decodeHtml(item.title);
+                  const content = extractPureText(item.content || item.description || '');
+                  const snippet = content.length > 30 ? (content.slice(0, 160) + '...') : `Published story by Baljeetsingh Sucharia on Medium.`;
+                  const dateObj = new Date(item.pubDate);
+                  const formattedDate = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
-          function formatSlugToTitle(url) {
-            try {
-              const u = new URL(url);
-              const parts = u.pathname.split('/').filter(Boolean);
-              const last = parts[parts.length - 1] || '';
-              const cleanSlug = last
-                .replace(/(-baljeetsingh|-sucharia|-activity-[0-9]+.*|\.html)$/i, '')
-                .replace(/^[0-9]+-/, '');
-              if (!cleanSlug || cleanSlug === 'articles' || cleanSlug === 'posts') {
-                return 'Leadership & Strategic Technology Insights';
+                  items.push({
+                    type: 'medium',
+                    title: title,
+                    url: item.link,
+                    snippet: snippet,
+                    cover: item.thumbnail || null,
+                    image: item.thumbnail || null,
+                    date: formattedDate,
+                    publishedAt: dateObj.toISOString(),
+                    readTime: calculateReadTime(content),
+                    labels: item.categories && item.categories.length ? ['Medium', ...item.categories.slice(0, 3)] : ['Medium', 'Article']
+                  });
+                }
               }
-              return cleanSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
-            } catch (e) {
-              return 'Strategic Leadership Dispatch';
+            } catch (err) {
+              console.error('Medium fetch error:', err.message);
             }
-          }
-
-          function extractLabels(title, url) {
-            const text = (title + ' ' + url).toLowerCase();
-            const labels = ['LinkedIn'];
-            if (text.match(/\b(ai|llm|gpt|machine-learning|intelligence)\b/)) labels.push('AI');
-            if (text.match(/\b(architecture|distributed|system|cloud|monolith)\b/)) labels.push('Architecture');
-            if (text.match(/\b(leadership|management|team|culture|career|profile)\b/)) labels.push('Leadership');
-            if (text.match(/\b(product|strategy|business|transformation)\b/)) labels.push('Strategy');
-            if (labels.length === 1) labels.push('Engineering', 'Insights');
-            return labels;
+            console.log(`✅ Loaded ${items.length} Medium articles.`);
+            return items;
           }
 
           function safeDecode(str) {
             try {
               return decodeURIComponent(str);
-            } catch(e) {
-              try { return unescape(str); } catch(e2) { return str; }
+            } catch (e) {
+              try {
+                return unescape(str);
+              } catch (e2) {
+                return str;
+              }
             }
           }
 
           function cleanTitle(raw, url, isFb) {
-            let t = decodeHtml(raw || '');
-            t = t.replace(/\s*\|\s*(Baljeetsingh.*|LinkedIn|Facebook)$/i, '').trim();
-            if (t.toLowerCase().includes('century ke raja')) {
-              return '21st Century Ke Raja Rani Ki Kahani (Cyber Safety Awareness)';
-            }
-            if (url.includes('1438814779837420') || t.toLowerCase().includes('tekdi technologies')) {
-              return 'Leadership Announcement: Joined Tekdi Technologies as Assistant Vice President';
-            }
-            if (url.includes('7366853265990381568')) return 'Bangalore AI Hackathon, Events & Mentoring';
+            let t = raw || '';
+            t = t.replace(/\s*\|\s*Baljeetsingh\s+Sucharia.*$/i, '')
+                 .replace(/\s*\|\s*LinkedIn.*$/i, '')
+                 .replace(/\s*\|\s*Facebook.*$/i, '')
+                 .replace(/^Baljeetsingh\s*-\s*/i, '')
+                 .replace(/^[0-9]+\s*[\u0900-\u0D7F\u0A80-\u0AFFa-zA-Z\s]+\|\s*/i, '')
+                 .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, '')
+                 .trim();
+
             if (url.includes('7244186317029359616')) return 'Microsoft ChatGPT & Data Privacy Controls in AI';
             if (t.startsWith('#')) {
               const tags = t.split(/\s+/).filter(w => w.startsWith('#')).map(w => w.replace(/^#/, ''));
@@ -262,9 +205,50 @@ jobs:
             return t;
           }
 
+          async function queryGoogleCustomSearch(query) {
+            if (!GOOGLE_API_KEY || !GOOGLE_CX) return [];
+            const results = [];
+            try {
+              for (let start = 1; start <= 31; start += 10) {
+                const url = `https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${GOOGLE_CX}&q=${encodeURIComponent(query)}&start=${start}&num=10`;
+                const res = await fetch(url);
+                if (!res.ok) break;
+                const data = await res.json();
+                if (data.items) {
+                  for (const item of data.items) {
+                    results.push(item);
+                  }
+                }
+                if (!data.queries?.nextPage) break;
+              }
+            } catch (err) {
+              console.warn('Google Search API query warning:', err.message);
+            }
+            return results;
+          }
+
           async function fetchLinkedInArticles() {
             console.log('Dynamically searching and parsing live social posts for Baljeetsingh Sucharia...');
-            
+            const candidateLinks = new Set();
+
+            // 1. Official Google Custom Search JSON API
+            if (GOOGLE_API_KEY && GOOGLE_CX) {
+              console.log('⚡ Querying Official Google Custom Search API...');
+              const googleQueries = [
+                '"baljeetsingh sucharia" site:linkedin.com',
+                '"baljeetsingh" site:linkedin.com/posts',
+                '"baljeetsingh sucharia" site:facebook.com',
+                'site:facebook.com/baljeetsinghit'
+              ];
+              for (const gq of googleQueries) {
+                const gItems = await queryGoogleCustomSearch(gq);
+                for (const gItem of gItems) {
+                  if (gItem.link) candidateLinks.add(gItem.link.split('?')[0]);
+                }
+              }
+            }
+
+            // 2. Open Search Index Crawler (Complementary Discovery)
             let sessionCookie = '';
             try {
               const initRes = await fetch('https://search.yahoo.com/', {
@@ -277,11 +261,8 @@ jobs:
               'site:linkedin.com "baljeetsingh sucharia"',
               'site:linkedin.com/in/baljeetsingh',
               'site:facebook.com "baljeetsingh.sucharia"',
-              'site:facebook.com/baljeetsingh.sucharia',
               'site:facebook.com/baljeetsinghit'
             ];
-
-            const candidateLinks = new Set();
 
             for (const q of searchQueries) {
               for (let page = 1; page <= 61; page += 10) {
@@ -299,52 +280,50 @@ jobs:
                   for (const m of ruMatches) {
                     let link = safeDecode(m[1]).split('?')[0];
                     link = link.replace(/https?:\/\/[a-z0-9-]+\.linkedin\.com/, 'https://www.linkedin.com');
-                    
-                    const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/') || link.includes('linkedin.com/in/baljeetsingh');
-                    const isFb = link.includes('facebook.com/') && (link.includes('/photos/') || link.includes('/posts/') || link.includes('/videos/') || link.includes('/reels/') || link.includes('story.php'));
-
-                    // Strict Author Handle Validation: Only Baljeetsingh accounts (/in/baljeetsingh only)
-                    let isAuthentic = false;
-                    const lLower = link.toLowerCase();
-
-                    if (isLi) {
-                      if (lLower.match(/\/in\/baljeetsingh(\/|$)/) || 
-                          lLower.includes('/posts/baljeetsingh_') || 
-                          lLower.includes('activity-7366853265990381568') || 
-                          lLower.includes('activity-7244186317029359616')) {
-                        isAuthentic = true;
-                      }
-                    } else if (isFb) {
-                      if (lLower.includes('/baljeetsingh.sucharia') || 
-                          lLower.includes('/baljeetsinghit') || 
-                          lLower.includes('/baljeetsingh.it')) {
-                        isAuthentic = true;
-                      }
-                    }
-
-                    if (isAuthentic) {
-                      candidateLinks.add(link);
-                    }
+                    candidateLinks.add(link);
                   }
-                } catch (err) {
-                  // Silently continue if search page network flaked
-                }
+                } catch (err) {}
               }
             }
 
-            console.log(`Discovered ${candidateLinks.size} authentic social post URLs dynamically (Zero fallbacks). Extracting live post photos and metadata...`);
+            // Strict Author & Content Filter
+            const verifiedCandidates = [];
+            for (const link of candidateLinks) {
+              const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/');
+              const isFb = link.includes('facebook.com/') && (link.includes('/photos/') || link.includes('/posts/') || link.includes('/videos/') || link.includes('/reels/') || link.includes('story.php') || link.endsWith('/baljeetsinghit/'));
+
+              const lLower = link.toLowerCase();
+              let isAuthentic = false;
+
+              if (isLi) {
+                if ((lLower.includes('/posts/baljeetsingh_') || lLower.includes('/in/baljeetsingh') || lLower.includes('activity-') || lLower.includes('/pulse/')) &&
+                    !lLower.includes('baljeetsinghhira') && !lLower.includes('baljeetssangha') && !lLower.includes('the-flowry-show')) {
+                  isAuthentic = true;
+                }
+              } else if (isFb) {
+                if ((lLower.includes('baljeetsingh.sucharia') || lLower.includes('baljeetsinghit') || lLower.includes('baljeetsingh.it')) &&
+                    !lLower.includes('shwetasucharia')) {
+                  isAuthentic = true;
+                }
+              }
+
+              if (isAuthentic) {
+                verifiedCandidates.push(link);
+              }
+            }
+
+            console.log(`Discovered ${verifiedCandidates.length} authentic social post URLs dynamically. Extracting live post photos and metadata...`);
 
             const verifiedItems = [];
             const seenTitles = new Set();
 
-            for (const url of candidateLinks) {
+            for (const url of verifiedCandidates) {
               try {
                 const isFacebook = url.includes('facebook.com');
                 const userAgent = isFacebook ?
                   'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)' :
                   'LinkedInBot/1.0 (compatible; Mozilla/5.0; Apache-HttpClient +http://www.linkedin.com)';
 
-                // Live HTTP fetch to inspect HTML and extract direct post photo
                 const headRes = await fetch(url, {
                   headers: {
                     'User-Agent': userAgent,
@@ -368,23 +347,26 @@ jobs:
                 
                 if (ogImageMatch) {
                   const candidateImg = ogImageMatch[1].replace(/&amp;/g, '&');
-                  // Filter out generic social network static icons
                   if (!candidateImg.includes('static.licdn.com/aero-v1/sc/h/') && !candidateImg.includes('static.xx.fbcdn.net/rsrc.php')) {
                     postPhoto = candidateImg;
                   }
                 }
 
-                // Dynamic Title extraction from OpenGraph or slug
+                // Dynamic Title & Snippet extraction
                 const ogTitleMatch = html.match(/<meta\s+(?:property|name)=["']og:title["']\s+content=["']([^"']+)["']/i) ||
                                      html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:title["']/i);
+                const ogDescMatch = html.match(/<meta\s+(?:property|name)=["']og:description["']\s+content=["']([^"']+)["']/i) ||
+                                    html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:description["']/i);
+                
                 const rawTitle = ogTitleMatch ? ogTitleMatch[1] : '';
                 const title = cleanTitle(rawTitle, url, isFacebook);
+                const snippet = ogDescMatch ? ogDescMatch[1].replace(/&amp;/g, '&').replace(/<[^>]*>?/gm, '').slice(0, 180) + '...' : `${isFacebook ? 'Facebook' : 'LinkedIn'} dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering architecture.`;
                 
                 if (seenTitles.has(title.toLowerCase())) continue;
                 seenTitles.add(title.toLowerCase());
 
                 // Dynamic Labels extraction
-                const lower = (title + ' ' + url).toLowerCase();
+                const lower = (title + ' ' + url + ' ' + snippet).toLowerCase();
                 const labels = [isFacebook ? 'Facebook' : 'LinkedIn'];
                 if (lower.match(/\b(ai|intelligence|futureofwork|llm)\b/)) labels.push('AI');
                 if (lower.match(/\b(architecture|caching|cloud|systems|opensource|dpg|dpdpa)\b/)) labels.push('Architecture');
@@ -392,7 +374,6 @@ jobs:
                 if (lower.match(/\b(strategy|product|kpi|growth|business|innovation)\b/)) labels.push('Strategy');
                 if (labels.length === 1) labels.push('Engineering', 'Insights');
 
-                // Dynamic date formatting
                 let dateStr = isFacebook ? 'Facebook Post' : 'LinkedIn Post';
                 let isoDate = new Date().toISOString();
 
@@ -402,7 +383,7 @@ jobs:
                   url: url,
                   cover: postPhoto,
                   image: postPhoto,
-                  snippet: `${isFacebook ? 'Facebook' : 'LinkedIn'} dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering architecture.`,
+                  snippet: snippet,
                   date: dateStr,
                   publishedAt: isoDate,
                   labels: labels
