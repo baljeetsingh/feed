@@ -315,9 +315,18 @@ jobs:
               const googleQueries = [
                 '"baljeetsingh sucharia" site:linkedin.com',
                 '"baljeetsingh" site:linkedin.com/posts',
-                // '"baljeetsingh sucharia" site:facebook.com', // (Facebook discovery commented out)
-                // 'site:facebook.com/baljeetsinghit',
-                'site:linkedin.com/in/baljeetsingh'
+                '"baljeetsingh" site:linkedin.com/pulse',
+                'site:linkedin.com/in/baljeetsingh',
+                '"baljeetsingh" "sucharia" site:linkedin.com',
+                '"baljeetsingh" "tekdi" site:linkedin.com',
+                '"baljeetsingh" "caching" site:linkedin.com',
+                '"baljeetsingh" "leadership" site:linkedin.com',
+                '"baljeetsingh" "architecture" site:linkedin.com',
+                '"baljeetsingh" "quotes" site:linkedin.com',
+                '"baljeetsingh" "womensday" site:linkedin.com',
+                '"baljeetsingh" "lifecoach" site:linkedin.com',
+                '"baljeetsingh" "productmanagement" site:linkedin.com',
+                '"baljeetsingh" "dpg" site:linkedin.com'
               ];
               for (const gq of googleQueries) {
                 const gItems = await queryGoogleCustomSearch(gq);
@@ -351,36 +360,47 @@ jobs:
 
             const searchQueries = [
               'site:linkedin.com "baljeetsingh sucharia"',
-              'site:linkedin.com/in/baljeetsingh'
-              // 'site:facebook.com "baljeetsingh.sucharia"', // (Facebook discovery commented out)
-              // 'site:facebook.com/baljeetsinghit'
+              'site:linkedin.com/in/baljeetsingh',
+              'site:linkedin.com/posts "baljeetsingh"',
+              'site:linkedin.com/posts/baljeetsingh',
+              'site:linkedin.com/pulse "baljeetsingh"',
+              'site:linkedin.com "baljeetsingh" "sucharia"',
+              'site:linkedin.com "baljeetsingh" "tekdi"',
+              'site:linkedin.com "baljeetsingh" "caching"',
+              'site:linkedin.com "baljeetsingh" "leadership"',
+              'site:linkedin.com "baljeetsingh" "architecture"',
+              'site:linkedin.com "baljeetsingh" "quotes"',
+              'site:linkedin.com "baljeetsingh" "womensday"',
+              'site:linkedin.com "baljeetsingh" "lifecoach"',
+              'site:linkedin.com "baljeetsingh" "product"',
+              'site:linkedin.com "baljeetsingh" "hiring"'
             ];
 
+            const fetchPromises = [];
             for (const q of searchQueries) {
-              console.log(`   ➡️ Crawling query: "${q}"...`);
-              let queryFound = 0;
               for (let page = 1; page <= 61; page += 10) {
-                try {
-                  const searchUrl = `https://search.yahoo.com/search?p=${encodeURIComponent(q)}&b=${page}`;
-                  const res = await fetch(searchUrl, {
-                    headers: {
-                      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-                      'Cookie': sessionCookie
+                fetchPromises.push((async () => {
+                  try {
+                    const searchUrl = `https://search.yahoo.com/search?p=${encodeURIComponent(q)}&b=${page}`;
+                    const res = await fetch(searchUrl, {
+                      headers: {
+                        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+                        'Cookie': sessionCookie
+                      }
+                    });
+                    const text = await res.text();
+                    const ruMatches = [...text.matchAll(/\/RU=(.*?)\/RK=/g)];
+                    
+                    for (const m of ruMatches) {
+                      let link = safeDecode(m[1]).split('?')[0];
+                      link = link.replace(/https?:\/\/[a-z0-9-]+\.linkedin\.com/, 'https://www.linkedin.com');
+                      if (link.includes('linkedin.com')) candidateLinks.add(link);
                     }
-                  });
-                  const text = await res.text();
-                  const ruMatches = [...text.matchAll(/\/RU=(.*?)\/RK=/g)];
-                  
-                  for (const m of ruMatches) {
-                    let link = safeDecode(m[1]).split('?')[0];
-                    link = link.replace(/https?:\/\/[a-z0-9-]+\.linkedin\.com/, 'https://www.linkedin.com');
-                    candidateLinks.add(link);
-                    queryFound++;
-                  }
-                } catch (err) {}
+                  } catch (err) {}
+                })());
               }
-              console.log(`   📊 Query "${q}" decoded ${queryFound} candidate redirect links.`);
             }
+            await Promise.all(fetchPromises);
 
             console.log(`\n📋 Total Candidate Pool: ${candidateLinks.size} unique URLs.`);
 
@@ -389,25 +409,31 @@ jobs:
             const verifiedCandidates = [];
             for (const link of candidateLinks) {
               const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/') || link.includes('linkedin.com/in/baljeetsingh');
-              // const isFb = link.includes('facebook.com/') && (link.includes('/photos/') || link.includes('/posts/') || link.includes('/videos/') || link.includes('/reels/') || link.includes('story.php') || link.includes('/baljeetsinghit') || link.includes('/baljeetsingh.sucharia'));
 
               const lLower = link.toLowerCase();
-              let isAuthentic = false;
+              const isExcluded = lLower.includes('baljeetsinghhira') || 
+                                 lLower.includes('baljeetssangha') || 
+                                 lLower.includes('baljeetsinghofficial') || 
+                                 lLower.includes('baljeetsinghcpa') || 
+                                 lLower.includes('tejinder-kaur') || 
+                                 lLower.includes('baljeet-singh-b992') || 
+                                 lLower.includes('the-flowry-show') ||
+                                 lLower.includes('pulse/snapper') ||
+                                 lLower.includes('pulse/arabs') ||
+                                 lLower.includes('pulse/liefde') ||
+                                 lLower.includes('pulse/guide-facebook');
 
-              if (isLi) {
-                if ((lLower.includes('/posts/baljeetsingh_') || lLower.includes('/in/baljeetsingh') || lLower.includes('activity-') || lLower.includes('/pulse/')) &&
-                    !lLower.includes('baljeetsinghhira') && !lLower.includes('baljeetssangha') && !lLower.includes('the-flowry-show')) {
+              let isAuthentic = false;
+              if (isLi && !isExcluded) {
+                if (lLower.includes('/in/baljeetsingh') ||
+                    lLower.includes('/posts/baljeetsingh_') || 
+                    lLower.includes('/posts/baljeetsingh-') || 
+                    lLower.includes('sucharia') ||
+                    (lLower.includes('/pulse/') && (lLower.includes('baljeetsingh') || lLower.includes('sucharia'))) ||
+                    (lLower.includes('activity-') && (lLower.includes('baljeetsingh') || lLower.includes('baljeet-singh')))) {
                   isAuthentic = true;
                 }
               }
-              /* Facebook filter commented out:
-              else if (isFb) {
-                if ((lLower.includes('baljeetsingh.sucharia') || lLower.includes('baljeetsinghit') || lLower.includes('baljeetsingh.it')) &&
-                    !lLower.includes('shwetasucharia')) {
-                  isAuthentic = true;
-                }
-              }
-              */
 
               if (isAuthentic) {
                 verifiedCandidates.push(link);
