@@ -311,44 +311,37 @@ jobs:
 
             // 1. Official Google Custom Search JSON API
             if (GOOGLE_API_KEY && GOOGLE_CX) {
-              console.log(`\n🔍 [Method 1] Executing Google Custom Search API Queries (CX: ${GOOGLE_CX})...`);
               const googleQueries = [
-                '"baljeetsingh sucharia" site:linkedin.com',
+                '"baljeetsingh sucharia" site:linkedin.com/posts',
                 '"baljeetsingh" site:linkedin.com/posts',
                 '"baljeetsingh" site:linkedin.com/pulse',
-                'site:linkedin.com/in/baljeetsingh',
-                '"baljeetsingh" "sucharia" site:linkedin.com',
+                '"baljeetsingh" "sucharia" site:linkedin.com/posts',
                 '"baljeetsingh" "tekdi" site:linkedin.com',
                 '"baljeetsingh" "caching" site:linkedin.com',
                 '"baljeetsingh" "leadership" site:linkedin.com',
                 '"baljeetsingh" "architecture" site:linkedin.com',
                 '"baljeetsingh" "quotes" site:linkedin.com',
                 '"baljeetsingh" "womensday" site:linkedin.com',
-                '"baljeetsingh" "lifecoach" site:linkedin.com',
                 '"baljeetsingh" "productmanagement" site:linkedin.com',
                 '"baljeetsingh" "dpg" site:linkedin.com'
               ];
               for (const gq of googleQueries) {
                 const gItems = await queryGoogleCustomSearch(gq);
                 console.log(`   📊 Query "${gq}" produced ${gItems.length} Google-indexed items.`);
-                for (const gItem of gItems) {
-                  if (gItem.link) {
-                    const cleanUrl = gItem.link.split('?')[0];
-                    candidateLinks.add(cleanUrl);
-                    googleMetadataMap[cleanUrl] = {
-                      title: gItem.title || '',
-                      snippet: gItem.snippet || '',
-                      image: gItem.pagemap?.cse_image?.[0]?.src || gItem.pagemap?.metatags?.[0]?.['og:image'] || null
+                gItems.forEach(it => {
+                  if (it.link && (it.link.includes('linkedin.com/posts/') || it.link.includes('linkedin.com/pulse/'))) {
+                    candidateLinks.add(it.link);
+                    googleMetadataMap[it.link] = {
+                      title: it.title,
+                      snippet: it.snippet,
+                      image: it.image
                     };
-                    console.log(`      + Added Google candidate: ${cleanUrl} (${gItem.title || 'Untitled'})`);
                   }
-                }
+                });
               }
-            } else {
-              console.log('\nℹ️ [Method 1] Google Custom Search API skipped (Missing API Key or CX).');
             }
 
-            // 2. Open Search Index Crawler (Complementary Discovery)
+            // 2. Open Search Index Crawler across Yahoo & DuckDuckGo (Zero API Limits)
             console.log('\n🔍 [Method 2] Executing Open Search Index Crawler Queries...');
             let sessionCookie = '';
             try {
@@ -359,21 +352,18 @@ jobs:
             } catch (e) {}
 
             const searchQueries = [
-              'site:linkedin.com "baljeetsingh sucharia"',
-              'site:linkedin.com/in/baljeetsingh',
+              'site:linkedin.com/posts "baljeetsingh sucharia"',
               'site:linkedin.com/posts "baljeetsingh"',
               'site:linkedin.com/posts/baljeetsingh',
               'site:linkedin.com/pulse "baljeetsingh"',
-              'site:linkedin.com "baljeetsingh" "sucharia"',
-              'site:linkedin.com "baljeetsingh" "tekdi"',
-              'site:linkedin.com "baljeetsingh" "caching"',
-              'site:linkedin.com "baljeetsingh" "leadership"',
-              'site:linkedin.com "baljeetsingh" "architecture"',
-              'site:linkedin.com "baljeetsingh" "quotes"',
-              'site:linkedin.com "baljeetsingh" "womensday"',
-              'site:linkedin.com "baljeetsingh" "lifecoach"',
-              'site:linkedin.com "baljeetsingh" "product"',
-              'site:linkedin.com "baljeetsingh" "hiring"'
+              'site:linkedin.com/posts "sucharia"',
+              'site:linkedin.com/posts "baljeetsingh" "caching"',
+              'site:linkedin.com/posts "baljeetsingh" "leadership"',
+              'site:linkedin.com/posts "baljeetsingh" "architecture"',
+              'site:linkedin.com/posts "baljeetsingh" "quotes"',
+              'site:linkedin.com/posts "baljeetsingh" "womensday"',
+              'site:linkedin.com/posts "baljeetsingh" "product"',
+              'site:linkedin.com/posts "baljeetsingh" "hiring"'
             ];
 
             const fetchPromises = [];
