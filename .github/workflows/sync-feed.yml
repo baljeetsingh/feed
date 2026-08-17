@@ -304,7 +304,7 @@ jobs:
 
           async function fetchLinkedInArticles() {
             console.log('\n---------------------------------------------------------------');
-            console.log('🌐 [STEP 3] DISCOVERING LIVE SOCIAL POSTS (LINKEDIN & FACEBOOK)');
+            console.log('🌐 [STEP 3] DISCOVERING LIVE LINKEDIN DISPATCHES');
             console.log('---------------------------------------------------------------');
             const candidateLinks = new Set();
             const googleMetadataMap = {};
@@ -315,8 +315,8 @@ jobs:
               const googleQueries = [
                 '"baljeetsingh sucharia" site:linkedin.com',
                 '"baljeetsingh" site:linkedin.com/posts',
-                '"baljeetsingh sucharia" site:facebook.com',
-                'site:facebook.com/baljeetsinghit',
+                // '"baljeetsingh sucharia" site:facebook.com', // (Facebook discovery commented out)
+                // 'site:facebook.com/baljeetsinghit',
                 'site:linkedin.com/in/baljeetsingh'
               ];
               for (const gq of googleQueries) {
@@ -351,9 +351,9 @@ jobs:
 
             const searchQueries = [
               'site:linkedin.com "baljeetsingh sucharia"',
-              'site:linkedin.com/in/baljeetsingh',
-              'site:facebook.com "baljeetsingh.sucharia"',
-              'site:facebook.com/baljeetsinghit'
+              'site:linkedin.com/in/baljeetsingh'
+              // 'site:facebook.com "baljeetsingh.sucharia"', // (Facebook discovery commented out)
+              // 'site:facebook.com/baljeetsinghit'
             ];
 
             for (const q of searchQueries) {
@@ -389,7 +389,7 @@ jobs:
             const verifiedCandidates = [];
             for (const link of candidateLinks) {
               const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/') || link.includes('linkedin.com/in/baljeetsingh');
-              const isFb = link.includes('facebook.com/') && (link.includes('/photos/') || link.includes('/posts/') || link.includes('/videos/') || link.includes('/reels/') || link.includes('story.php') || link.includes('/baljeetsinghit') || link.includes('/baljeetsingh.sucharia'));
+              // const isFb = link.includes('facebook.com/') && (link.includes('/photos/') || link.includes('/posts/') || link.includes('/videos/') || link.includes('/reels/') || link.includes('story.php') || link.includes('/baljeetsinghit') || link.includes('/baljeetsingh.sucharia'));
 
               const lLower = link.toLowerCase();
               let isAuthentic = false;
@@ -399,12 +399,15 @@ jobs:
                     !lLower.includes('baljeetsinghhira') && !lLower.includes('baljeetssangha') && !lLower.includes('the-flowry-show')) {
                   isAuthentic = true;
                 }
-              } else if (isFb) {
+              }
+              /* Facebook filter commented out:
+              else if (isFb) {
                 if ((lLower.includes('baljeetsingh.sucharia') || lLower.includes('baljeetsinghit') || lLower.includes('baljeetsingh.it')) &&
                     !lLower.includes('shwetasucharia')) {
                   isAuthentic = true;
                 }
               }
+              */
 
               if (isAuthentic) {
                 verifiedCandidates.push(link);
@@ -414,14 +417,14 @@ jobs:
               }
             }
 
-            console.log(`\n🎯 Filtered to ${verifiedCandidates.length} authentic social posts. Extracting live post photos and metadata...`);
+            console.log(`\n🎯 Filtered to ${verifiedCandidates.length} authentic LinkedIn posts. Extracting live post photos and metadata...`);
 
             const verifiedItems = [];
             const seenTitles = new Set();
 
             for (const url of verifiedCandidates) {
               try {
-                const isFacebook = url.includes('facebook.com');
+                const isFacebook = false; // url.includes('facebook.com');
                 const gMeta = googleMetadataMap[url] || {};
                 let postPhoto = gMeta.image || null;
                 let rawTitle = gMeta.title || '';
@@ -432,9 +435,7 @@ jobs:
 
                 // Try fetching page HTML for highest resolution live photo and text
                 try {
-                  const userAgent = isFacebook ?
-                    'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)' :
-                    'LinkedInBot/1.0 (compatible; Mozilla/5.0; Apache-HttpClient +http://www.linkedin.com)';
+                  const userAgent = 'LinkedInBot/1.0 (compatible; Mozilla/5.0; Apache-HttpClient +http://www.linkedin.com)';
 
                   const headRes = await fetch(url, {
                     headers: {
@@ -473,7 +474,7 @@ jobs:
                 }
 
                 const title = cleanTitle(rawTitle, url, isFacebook);
-                const snippet = rawSnippet ? rawSnippet.replace(/&amp;/g, '&').replace(/<[^>]*>?/gm, '').slice(0, 180) + '...' : `${isFacebook ? 'Facebook' : 'LinkedIn'} dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering architecture.`;
+                const snippet = rawSnippet ? rawSnippet.replace(/&amp;/g, '&').replace(/<[^>]*>?/gm, '').slice(0, 180) + '...' : `LinkedIn dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering architecture.`;
                 
                 if (seenTitles.has(title.toLowerCase())) {
                   console.log(`      ⚠️ Duplicate title skipped: "${title}"`);
@@ -483,18 +484,18 @@ jobs:
 
                 // Dynamic Labels extraction
                 const lower = (title + ' ' + url + ' ' + snippet).toLowerCase();
-                const labels = [isFacebook ? 'Facebook' : 'LinkedIn'];
+                const labels = ['LinkedIn'];
                 if (lower.match(/\b(ai|intelligence|futureofwork|llm)\b/)) labels.push('AI');
                 if (lower.match(/\b(architecture|caching|cloud|systems|opensource|dpg|dpdpa)\b/)) labels.push('Architecture');
                 if (lower.match(/\b(leadership|coach|leaders|mindset|career|gratitude|womensday)\b/)) labels.push('Leadership');
                 if (lower.match(/\b(strategy|product|kpi|growth|business|innovation)\b/)) labels.push('Strategy');
                 if (labels.length === 1) labels.push('Engineering', 'Insights');
 
-                let dateStr = isFacebook ? 'Facebook Post' : 'LinkedIn Post';
+                let dateStr = 'LinkedIn Post';
                 let isoDate = new Date().toISOString();
 
                 verifiedItems.push({
-                  type: isFacebook ? 'facebook' : 'linkedin',
+                  type: 'linkedin',
                   title: title,
                   url: url,
                   cover: postPhoto,
@@ -510,7 +511,7 @@ jobs:
               }
             }
 
-            console.log(`\n✅ Finished Social Posts: ${verifiedItems.length} authentic items ready.`);
+            console.log(`\n✅ Finished LinkedIn Posts: ${verifiedItems.length} authentic items ready.`);
             return verifiedItems;
           }
 
@@ -528,7 +529,7 @@ jobs:
             const allItems = [...liItems, ...medItems, ...soItems];
 
             console.log('\n📊 Feed Breakdown:');
-            console.log(`   • LinkedIn & Facebook: ${liItems.length} items`);
+            console.log(`   • LinkedIn Dispatches: ${liItems.length} items`);
             console.log(`   • Medium Articles:     ${medItems.length} items`);
             console.log(`   • Stack Overflow:      ${soItems.length} items`);
             console.log(`   -------------------------------------------------`);
@@ -563,7 +564,7 @@ jobs:
               totalItems: allItems.length,
               userProfiles: {
                 linkedin: 'https://www.linkedin.com/in/baljeetsingh/',
-                facebook: 'https://www.facebook.com/baljeetsinghit/',
+                // facebook: 'https://www.facebook.com/baljeetsinghit/', // (Facebook commented out)
                 stackoverflow: `https://stackoverflow.com/users/${STACK_OVERFLOW_USER_ID}/baljeetsingh-sucharia?tab=answers`,
                 medium: `https://medium.com/@${MEDIUM_USERNAME}`,
                 blog: 'https://blog.baljeetsingh.net'
