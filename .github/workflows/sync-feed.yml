@@ -306,7 +306,39 @@ jobs:
             console.log('\n---------------------------------------------------------------');
             console.log('🌐 [STEP 3] DISCOVERING LIVE LINKEDIN DISPATCHES');
             console.log('---------------------------------------------------------------');
-            const candidateLinks = new Set();
+            const verifiedBasePosts = [
+              'https://www.linkedin.com/posts/baljeetsingh_waybackmachine-baljeetsingh-techhistory-activity-7493344264991715328-jD-y',
+              'https://www.linkedin.com/posts/baljeetsingh_intel-aiinside-indiaai-activity-7429159951404670976-nmXL',
+              'https://www.linkedin.com/posts/baljeetsingh_yearinreview-activity-7407144142146867200-Z_Jm',
+              'https://www.linkedin.com/posts/baljeetsingh_today-we-are-introducing-something-very-close-activity-7406389660190564352-4xgY',
+              'https://www.linkedin.com/posts/baljeetsingh_ai-innovation-futureofwork-activity-7393121379073691648-esUh',
+              'https://www.linkedin.com/posts/baljeetsingh_cheers-wellsaid-loveit-activity-7389194435793764353--omt',
+              'https://www.linkedin.com/posts/baljeetsingh_intelligence-is-defined-by-your-willingness-activity-7376820828438597632-JSqn',
+              'https://www.linkedin.com/posts/baljeetsingh_meetings-events-mentoring-activity-7366853265990381568-UW-E',
+              'https://www.linkedin.com/posts/baljeetsingh_womensday-activity-7303990291991072768-IoE2',
+              'https://www.linkedin.com/posts/baljeetsingh_gratitude-careergrowth-newopportunities-activity-7284906755254276097-Dcox',
+              'https://www.linkedin.com/posts/baljeetsingh_hello-connections-we-are-hiring-business-activity-7236328630736322560-WmT9',
+              'https://www.linkedin.com/posts/baljeetsingh_dpgtechfusion-opensource-dpg-activity-7176795235748888576-gtyn',
+              'https://www.linkedin.com/posts/baljeetsingh_quotes-lifecoaching-leadershipcoaching-activity-7083284463421468672-1uEo',
+              'https://www.linkedin.com/posts/baljeetsingh_the-caching-conundrum-a-tale-of-a-web-apps-activity-7024012194337992705-xnDy',
+              'https://www.linkedin.com/posts/baljeetsingh_lifesecret-workanniversary-activity-7020409890649059328-N01i',
+              'https://www.linkedin.com/posts/baljeetsingh_kpi-vs-kpi-what-do-you-think-which-kpi-activity-7016818115023921152-1exC',
+              'https://www.linkedin.com/posts/baljeetsingh_being-leader-is-never-about-arrogance-activity-6976577004439527424-_Wam',
+              'https://www.linkedin.com/posts/baljeetsingh_productmanagement-tips-baljeetsingh-activity-6975121285911601153-Jrrc',
+              'https://www.linkedin.com/posts/baljeetsingh_1year-16year-thankyou-activity-6968576619712012289-3PyF',
+              'https://www.linkedin.com/posts/baljeetsingh_ethicalhacking-ethicalimpersonation-zomato-activity-6954793421219713024-m7jT',
+              'https://www.linkedin.com/posts/baljeetsingh_future-ctc-negotiation-activity-6950849005631217666-HQC3',
+              'https://www.linkedin.com/posts/baljeetsingh_leadership-growthmindset-motivation-activity-6916635912864989184-FYcB',
+              'https://www.linkedin.com/posts/baljeetsingh_lifequotes-quotes-baljeetsinghitwale-activity-6802305925270016000-1-th',
+              'https://www.linkedin.com/posts/baljeetsingh_womensday-internationalwomenday2021-womenatwork-activity-6774700950742413312-UcXV',
+              'https://www.linkedin.com/posts/baljeetsingh_work-time-family-activity-6740862813146779649-kYX3',
+              'https://www.linkedin.com/posts/baljeetsingh_wee-cimsme-activity-6709841316932542464-RBnk',
+              'https://www.linkedin.com/posts/baljeetsingh_paypal-india-campus-challenge-activity-6705573287461715968-50_k',
+              'https://www.linkedin.com/posts/baljeetsingh_restarttheworld-focusonsolutions-bniworldtour-activity-6688649410055831552-3gBy',
+              'https://www.linkedin.com/posts/baljeetsingh_today-on-my-new-beginning-i-would-like-activity-6687704765025030144-eW7d',
+              'https://www.linkedin.com/posts/baljeetsingh_ten-things-never-ever-to-say-when-youre-activity-6326244416239562752-tREI'
+            ];
+            const candidateLinks = new Set(verifiedBasePosts);
             const googleMetadataMap = {};
 
             // 1. Official Google Custom Search JSON API
