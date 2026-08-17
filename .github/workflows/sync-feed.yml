@@ -90,18 +90,26 @@ jobs:
             console.log('⚡ Fetching Stack Overflow answers for User ID:', STACK_OVERFLOW_USER_ID);
             const items = [];
             try {
-              const url = `https://api.stackexchange.com/2.3/users/${STACK_OVERFLOW_USER_ID}/answers?order=desc&sort=creation&site=stackoverflow&filter=!9_bDDxJY5`;
+              const url = `https://api.stackexchange.com/2.3/users/${STACK_OVERFLOW_USER_ID}/answers?order=desc&sort=creation&site=stackoverflow`;
               const res = await fetch(url);
               if (!res.ok) throw new Error(`HTTP ${res.status}`);
               const data = await res.json();
-              if (data.items) {
-                for (const item of data.items) {
-                  const title = decodeHtml(item.title || 'Technical Answer & Code Solution');
-                  const answerBody = extractPureText(item.body || '');
-                  const snippet = answerBody.length > 30 ?
-                    (answerBody.slice(0, 160) + '...') :
-                    `High-impact engineering answer accepted on Stack Overflow (Score: ${item.score}${item.is_accepted ? ', Accepted' : ''}).`;
+              if (data.items && data.items.length > 0) {
+                // Batch-fetch all question titles in 1 single efficient request
+                const questionIds = data.items.map(a => a.question_id).join(';');
+                const qUrl = `https://api.stackexchange.com/2.3/questions/${questionIds}?site=stackoverflow`;
+                const qRes = await fetch(qUrl);
+                const qData = await qRes.json();
+                const qMap = {};
+                if (qData.items) {
+                  qData.items.forEach(q => {
+                    qMap[q.question_id] = decodeHtml(q.title);
+                  });
+                }
 
+                for (const item of data.items) {
+                  const title = qMap[item.question_id] || 'Stack Overflow Engineering Solution';
+                  const snippet = `Engineering solution for "${title}" on Stack Overflow (Score: ${item.score}${item.is_accepted ? ', Accepted' : ''}).`;
                   const dateObj = new Date(item.creation_date * 1000);
                   const formattedDate = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
@@ -115,7 +123,7 @@ jobs:
                     snippet: snippet,
                     date: formattedDate,
                     publishedAt: dateObj.toISOString(),
-                    readTime: calculateReadTime(answerBody),
+                    readTime: '2 min read',
                     labels: ['Stack Overflow', 'Engineering', 'Architecture']
                   });
                 }
@@ -123,7 +131,7 @@ jobs:
             } catch (err) {
               console.error('Stack Overflow fetch error:', err.message);
             }
-            console.log(`✅ Loaded ${items.length} Stack Overflow answers.`);
+            console.log(`✅ Loaded ${items.length} Stack Overflow answers with rich question titles.`);
             return items;
           }
 
