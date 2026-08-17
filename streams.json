@@ -1,1 +1,618 @@
-
+{
+  "updatedAt": "2026-08-17T05:52:03.155Z",
+  "author": "Baljeetsingh Sucharia",
+  "totalItems": 32,
+  "userProfiles": {
+    "linkedin": "https://www.linkedin.com/in/baljeetsingh/",
+    "facebook": "https://www.facebook.com/baljeetsinghit/",
+    "stackoverflow": "https://stackoverflow.com/users/1415364/baljeetsingh-sucharia?tab=answers",
+    "medium": "https://medium.com/@baljeetsingh",
+    "blog": "https://blog.baljeetsingh.net"
+  },
+  "items": [
+    {
+      "type": "stackoverflow",
+      "id": "so-79786003",
+      "title": "Windows - Unknown File Type & Windows Web \"Lookup\"",
+      "url": "https://stackoverflow.com/a/79786003",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Windows - Unknown File Type & Windows Web \"Lookup\"\" on Stack Overflow (Score: 0).",
+      "date": "Oct 9, 2025",
+      "publishedAt": "2025-10-09T03:08:10.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-79537165",
+      "title": "Svelte 5 Unsafe State Mutation at Tree Component",
+      "url": "https://stackoverflow.com/a/79537165",
+      "score": -1,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Svelte 5 Unsafe State Mutation at Tree Component\" on Stack Overflow (Score: -1).",
+      "date": "Mar 26, 2025",
+      "publishedAt": "2025-03-26T20:02:10.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-77162114",
+      "title": "unable to send http requests to simple flask app on ec2 instance",
+      "url": "https://stackoverflow.com/a/77162114",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"unable to send http requests to simple flask app on ec2 instance\" on Stack Overflow (Score: 0, Accepted).",
+      "date": "Sep 23, 2023",
+      "publishedAt": "2023-09-23T07:51:29.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-75265737",
+      "title": "Ag Grid react dropdown not showing outside grid",
+      "url": "https://stackoverflow.com/a/75265737",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Ag Grid react dropdown not showing outside grid\" on Stack Overflow (Score: 0).",
+      "date": "Jan 28, 2023",
+      "publishedAt": "2023-01-28T06:07:50.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-75265715",
+      "title": "Find email addresses of all logged in Onedrive/Sharepoint accounts in Windows 11",
+      "url": "https://stackoverflow.com/a/75265715",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Find email addresses of all logged in Onedrive/Sharepoint accounts in Windows 11\" on Stack Overflow (Score: 0).",
+      "date": "Jan 28, 2023",
+      "publishedAt": "2023-01-28T06:01:47.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-75265577",
+      "title": "Teams user profile uninstall via script",
+      "url": "https://stackoverflow.com/a/75265577",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"Teams user profile uninstall via script\" on Stack Overflow (Score: 0, Accepted).",
+      "date": "Jan 28, 2023",
+      "publishedAt": "2023-01-28T05:25:44.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "medium",
+      "title": "How to enhance messages?",
+      "url": "https://medium.com/@baljeetsingh/how-to-enhance-messages-5b1c76b6909c?source=rss-dad7f6273bb0------2",
+      "snippet": "How to enhance Skype messages? Need some spices to your Skype messages? Need of bringing more clarity to your Skype messages? Bored using plain text? Here are s...",
+      "cover": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+      "date": "Dec 22, 2019",
+      "publishedAt": "2019-12-22T08:30:29.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Medium",
+        "tech-tips",
+        "skype",
+        "tips-and-tricks"
+      ]
+    },
+    {
+      "type": "medium",
+      "title": "What will you Install on UR machine?",
+      "url": "https://medium.com/@baljeetsingh/what-will-you-install-on-ur-machine-4cba1e4552e8?source=rss-dad7f6273bb0------2",
+      "snippet": "I started making a list of what all software I would essentially require on MY Machine (Laptop / Desktop) Here is my quick list. Do share what is yours? C𝕆𝔻𝔼...",
+      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "date": "Dec 22, 2019",
+      "publishedAt": "2019-12-22T07:55:37.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Medium",
+        "lists",
+        "development",
+        "install-list"
+      ]
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-57194068",
+      "title": "Batch file/Powershell script to copy files from list.txt",
+      "url": "https://stackoverflow.com/a/57194068",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Batch file/Powershell script to copy files from list.txt\" on Stack Overflow (Score: 0).",
+      "date": "Jul 25, 2019",
+      "publishedAt": "2019-07-25T03:55:15.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-57193860",
+      "title": "Stored procedure doesn't return dataset",
+      "url": "https://stackoverflow.com/a/57193860",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Stored procedure doesn't return dataset\" on Stack Overflow (Score: 0).",
+      "date": "Jul 25, 2019",
+      "publishedAt": "2019-07-25T03:27:23.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-53758462",
+      "title": "ASP.NET User Control - Build on Every Change",
+      "url": "https://stackoverflow.com/a/53758462",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"ASP.NET User Control - Build on Every Change\" on Stack Overflow (Score: 0, Accepted).",
+      "date": "Dec 13, 2018",
+      "publishedAt": "2018-12-13T09:16:11.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-53755223",
+      "title": "Executing Batch File At This Directory",
+      "url": "https://stackoverflow.com/a/53755223",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"Executing Batch File At This Directory\" on Stack Overflow (Score: 0, Accepted).",
+      "date": "Dec 13, 2018",
+      "publishedAt": "2018-12-13T04:56:40.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-53755176",
+      "title": "Batch - why does set /P behave differently with | and with <",
+      "url": "https://stackoverflow.com/a/53755176",
+      "score": -1,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Batch - why does set /P behave differently with | and with <\" on Stack Overflow (Score: -1).",
+      "date": "Dec 13, 2018",
+      "publishedAt": "2018-12-13T04:49:54.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-53755130",
+      "title": "How can I emulate End Process Tree in C#/.Net",
+      "url": "https://stackoverflow.com/a/53755130",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"How can I emulate End Process Tree in C#/.Net\" on Stack Overflow (Score: 0).",
+      "date": "Dec 13, 2018",
+      "publishedAt": "2018-12-13T04:43:18.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-52248286",
+      "title": "Pushing selected daterange picker value to URL",
+      "url": "https://stackoverflow.com/a/52248286",
+      "score": -1,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Pushing selected daterange picker value to URL\" on Stack Overflow (Score: -1).",
+      "date": "Sep 9, 2018",
+      "publishedAt": "2018-09-09T20:06:34.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-52138243",
+      "title": "What’s the easiest way to preview data from an image column?",
+      "url": "https://stackoverflow.com/a/52138243",
+      "score": 2,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"What’s the easiest way to preview data from an image column?\" on Stack Overflow (Score: 2).",
+      "date": "Sep 2, 2018",
+      "publishedAt": "2018-09-02T15:06:42.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-42482805",
+      "title": "Replacing characters in a text file from Windows batch file",
+      "url": "https://stackoverflow.com/a/42482805",
+      "score": 7,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Replacing characters in a text file from Windows batch file\" on Stack Overflow (Score: 7).",
+      "date": "Feb 27, 2017",
+      "publishedAt": "2017-02-27T10:04:06.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-42482034",
+      "title": "How to make the console font bigger when running a batch?",
+      "url": "https://stackoverflow.com/a/42482034",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"How to make the console font bigger when running a batch?\" on Stack Overflow (Score: 0, Accepted).",
+      "date": "Feb 27, 2017",
+      "publishedAt": "2017-02-27T09:27:01.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22753072",
+      "title": "Redeploying the changes to IIS",
+      "url": "https://stackoverflow.com/a/22753072",
+      "score": 2,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"Redeploying the changes to IIS\" on Stack Overflow (Score: 2, Accepted).",
+      "date": "Mar 31, 2014",
+      "publishedAt": "2014-03-31T03:15:03.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22595702",
+      "title": "<a> tag problems and code behind problems",
+      "url": "https://stackoverflow.com/a/22595702",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"<a> tag problems and code behind problems\" on Stack Overflow (Score: 0).",
+      "date": "Mar 23, 2014",
+      "publishedAt": "2014-03-23T19:12:00.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22572928",
+      "title": "DateTime error 21-undefined-2014",
+      "url": "https://stackoverflow.com/a/22572928",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"DateTime error 21-undefined-2014\" on Stack Overflow (Score: 0).",
+      "date": "Mar 22, 2014",
+      "publishedAt": "2014-03-22T03:06:18.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22524146",
+      "title": "Copy from Excel Concatenatec Cells to Visual Studio without Quotes",
+      "url": "https://stackoverflow.com/a/22524146",
+      "score": 1,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"Copy from Excel Concatenatec Cells to Visual Studio without Quotes\" on Stack Overflow (Score: 1, Accepted).",
+      "date": "Mar 20, 2014",
+      "publishedAt": "2014-03-20T05:25:06.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22506738",
+      "title": "what does it mean batch set variable=%variable:~1%",
+      "url": "https://stackoverflow.com/a/22506738",
+      "score": 7,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"what does it mean batch set variable=%variable:~1%\" on Stack Overflow (Score: 7, Accepted).",
+      "date": "Mar 19, 2014",
+      "publishedAt": "2014-03-19T13:03:11.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22469579",
+      "title": "Visual Studio 2010 and 2013 not working on my system",
+      "url": "https://stackoverflow.com/a/22469579",
+      "score": 1,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Visual Studio 2010 and 2013 not working on my system\" on Stack Overflow (Score: 1).",
+      "date": "Mar 18, 2014",
+      "publishedAt": "2014-03-18T03:01:39.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22469294",
+      "title": "How to find a string from a text file and load its line content",
+      "url": "https://stackoverflow.com/a/22469294",
+      "score": 1,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"How to find a string from a text file and load its line content\" on Stack Overflow (Score: 1, Accepted).",
+      "date": "Mar 18, 2014",
+      "publishedAt": "2014-03-18T02:29:16.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22442865",
+      "title": "Can you use a wildcard in getElementById?",
+      "url": "https://stackoverflow.com/a/22442865",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Can you use a wildcard in getElementById?\" on Stack Overflow (Score: 0).",
+      "date": "Mar 16, 2014",
+      "publishedAt": "2014-03-16T20:53:15.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22438499",
+      "title": "Does C# have an easy way for me to replace multiple if statements?",
+      "url": "https://stackoverflow.com/a/22438499",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Does C# have an easy way for me to replace multiple if statements?\" on Stack Overflow (Score: 0).",
+      "date": "Mar 16, 2014",
+      "publishedAt": "2014-03-16T15:01:11.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22437947",
+      "title": "Does C# have an easy way for me to replace multiple if statements?",
+      "url": "https://stackoverflow.com/a/22437947",
+      "score": 3,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"Does C# have an easy way for me to replace multiple if statements?\" on Stack Overflow (Score: 3).",
+      "date": "Mar 16, 2014",
+      "publishedAt": "2014-03-16T14:12:08.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22437585",
+      "title": "VS 2012 New project creation throws exception",
+      "url": "https://stackoverflow.com/a/22437585",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"VS 2012 New project creation throws exception\" on Stack Overflow (Score: 0).",
+      "date": "Mar 16, 2014",
+      "publishedAt": "2014-03-16T13:40:46.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22418783",
+      "title": "How to get Top 3 of an int Array and display values in Listbox / ListView",
+      "url": "https://stackoverflow.com/a/22418783",
+      "score": 2,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"How to get Top 3 of an int Array and display values in Listbox / ListView\" on Stack Overflow (Score: 2).",
+      "date": "Mar 15, 2014",
+      "publishedAt": "2014-03-15T02:25:36.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22395299",
+      "title": "How to make thumbnail of word file in MSWord 2013..?",
+      "url": "https://stackoverflow.com/a/22395299",
+      "score": 1,
+      "isAccepted": true,
+      "snippet": "Engineering solution for \"How to make thumbnail of word file in MSWord 2013..?\" on Stack Overflow (Score: 1, Accepted).",
+      "date": "Mar 14, 2014",
+      "publishedAt": "2014-03-14T02:55:30.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22266315",
+      "title": "How to handle UnauthorizedAccessException from User Code",
+      "url": "https://stackoverflow.com/a/22266315",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "Engineering solution for \"How to handle UnauthorizedAccessException from User Code\" on Stack Overflow (Score: 0).",
+      "date": "Mar 8, 2014",
+      "publishedAt": "2014-03-08T07:09:59.000Z",
+      "readTime": "2 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80"
+    }
+  ]
+}
