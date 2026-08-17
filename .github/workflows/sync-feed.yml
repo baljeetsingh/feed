@@ -408,7 +408,7 @@ jobs:
             console.log('🛡️ Applying strict author & profile identity verification...');
             const verifiedCandidates = [];
             for (const link of candidateLinks) {
-              const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/') || link.includes('linkedin.com/in/baljeetsingh');
+              const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/');
 
               const lLower = link.toLowerCase();
               const isExcluded = lLower.includes('baljeetsinghhira') || 
@@ -427,9 +427,7 @@ jobs:
 
               let isAuthentic = false;
               if (isLi && !isExcluded) {
-                if (lLower.includes('/in/baljeetsingh') ||
-                    lLower.includes('/posts/baljeetsingh_') || 
-                    lLower.includes('sucharia') ||
+                if (lLower.includes('/posts/baljeetsingh_') || 
                     (lLower.includes('/pulse/') && (lLower.includes('baljeetsingh') || lLower.includes('sucharia')))) {
                   isAuthentic = true;
                 }
