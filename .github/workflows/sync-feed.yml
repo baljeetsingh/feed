@@ -416,9 +416,9 @@ jobs:
                                  lLower.includes('baljeetsinghofficial') || 
                                  lLower.includes('baljeetsinghcpa') || 
                                  lLower.includes('tejinder-kaur') || 
-                                 lLower.includes('baljeet-singh-b992') || 
+                                 lLower.includes('baljeet-singh') || 
+                                 lLower.includes('/posts/baljeet-singh') || 
                                  lLower.includes('harsh-baljeetsingh-yadav') || 
-                                 lLower.includes('baljeet-singh-32774840') || 
                                  lLower.includes('the-flowry-show') ||
                                  lLower.includes('pulse/snapper') ||
                                  lLower.includes('pulse/arabs') ||
@@ -429,10 +429,8 @@ jobs:
               if (isLi && !isExcluded) {
                 if (lLower.includes('/in/baljeetsingh') ||
                     lLower.includes('/posts/baljeetsingh_') || 
-                    lLower.includes('/posts/baljeetsingh-') || 
                     lLower.includes('sucharia') ||
-                    (lLower.includes('/pulse/') && (lLower.includes('baljeetsingh') || lLower.includes('sucharia'))) ||
-                    (lLower.includes('activity-') && (lLower.includes('baljeetsingh') || lLower.includes('baljeet-singh')))) {
+                    (lLower.includes('/pulse/') && (lLower.includes('baljeetsingh') || lLower.includes('sucharia')))) {
                   isAuthentic = true;
                 }
               }
@@ -521,6 +519,20 @@ jobs:
 
                 let dateStr = 'LinkedIn Post';
                 let isoDate = new Date().toISOString();
+
+                // Extract exact creation timestamp from LinkedIn 64-bit Snowflake Activity ID
+                const activityMatch = url.match(/activity-([0-9]{15,22})/);
+                if (activityMatch) {
+                  try {
+                    const id = BigInt(activityMatch[1]);
+                    const ts = Number(id >> 22n);
+                    if (ts > 1262304000000 && ts < Date.now() + 86400000) {
+                      const d = new Date(ts);
+                      isoDate = d.toISOString();
+                      dateStr = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+                    }
+                  } catch (e) {}
+                }
 
                 verifiedItems.push({
                   type: 'linkedin',
