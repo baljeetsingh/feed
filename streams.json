@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-17T08:30:51.870Z",
+  "updatedAt": "2026-08-17T12:48:13.440Z",
   "author": "Baljeetsingh Sucharia",
-  "totalItems": 62,
+  "totalItems": 70,
   "userProfiles": {
     "linkedin": "https://www.linkedin.com/in/baljeetsingh/",
     "stackoverflow": "https://stackoverflow.com/users/1415364/baljeetsingh-sucharia?tab=answers",
@@ -46,7 +46,7 @@
       "cover": "https://media.licdn.com/dms/image/v2/D5622AQF9IBCgOcZxTQ/feedshare-shrink_800/B56Zst2V3OGsAg-/0/1766000780243?e=2147483647&v=beta&t=lS5vKocCV2zfiCdR6paPzsUASUaf05Bay2TrxlhQSxQ",
       "image": "https://media.licdn.com/dms/image/v2/D5622AQF9IBCgOcZxTQ/feedshare-shrink_800/B56Zst2V3OGsAg-/0/1766000780243?e=2147483647&v=beta&t=lS5vKocCV2zfiCdR6paPzsUASUaf05Bay2TrxlhQSxQ",
       "snippet": "Shout out to Shweta Sucharia, the person I connected with the most on LinkedIn this year. #YearinReview...",
-      "date": "Dec 18, 2025",
+      "date": "Dec 17, 2025",
       "publishedAt": "2025-12-17T19:46:21.571Z",
       "labels": [
         "LinkedIn",
@@ -86,6 +86,21 @@
     },
     {
       "type": "linkedin",
+      "title": "Certificate of Completion",
+      "url": "https://www.linkedin.com/posts/baljeetsingh_certificate-of-completion-activity-7392862520937447424-99m9",
+      "cover": "https://media.licdn.com/dms/image/v2/D4D22AQFh_vKrXXWu-g/feedshare-shrink_800/B4DZpi4jW7GsAg-/0/1762595583672?e=2147483647&v=beta&t=b7Io1rMpoFwhS72bgGsc3BrmvopDKA5-T-Hd923cQbo",
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQFh_vKrXXWu-g/feedshare-shrink_800/B4DZpi4jW7GsAg-/0/1762595583672?e=2147483647&v=beta&t=b7Io1rMpoFwhS72bgGsc3BrmvopDKA5-T-Hd923cQbo",
+      "snippet": "Becoming an #AIFirst #Product #Leader \n\nAre you ready for future ?\nWhat if AI takes Control of AI ?\n\n#artificialintelligenceforbusiness #artificialintelligence #aiformanagement #ai...",
+      "date": "Nov 8, 2025",
+      "publishedAt": "2025-11-08T09:56:17.735Z",
+      "labels": [
+        "LinkedIn",
+        "AI",
+        "Strategy"
+      ]
+    },
+    {
+      "type": "linkedin",
       "title": "Cheers, Wellsaid, Loveit",
       "url": "https://www.linkedin.com/posts/baljeetsingh_cheers-wellsaid-loveit-activity-7389194435793764353--omt",
       "cover": "https://media.licdn.com/dms/image/v2/D4D22AQGDJzxCjBFLcw/feedshare-image-high-res/B4DZorGIo_KUAs-/0/1761659621803?e=2147483647&v=beta&t=jjuEVjZDvF2E5pSaTB779ANAhXoMtnU08eQwUeIBnvg",
@@ -115,8 +130,24 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "linkedin",
+      "title": "Birthday, Disruption, Pagerank, Ai, Generative, Cloud, Solving, Massive, Unsolved, Redefine, Celebrate, Appreciate, Google, Doodle, Tech, Ai, Innovation, Google, Futureofwork, Disruption…",
+      "url": "https://www.linkedin.com/posts/baljeetsingh_birthday-disruption-pagerank-activity-7377593865362378752-xW6f",
+      "cover": "https://media.licdn.com/dms/image/v2/D4D22AQFZnf5HM-jfVw/feedshare-shrink_800/B4DZmJ6hBxJQAg-/0/1758955445692?e=2147483647&v=beta&t=PQDFwqJmUclb0KA--b0Gv2kIiH4zruypyPj_xt4UP5w",
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQFZnf5HM-jfVw/feedshare-shrink_800/B4DZmJ6hBxJQAg-/0/1758955445692?e=2147483647&v=beta&t=PQDFwqJmUclb0KA--b0Gv2kIiH4zruypyPj_xt4UP5w",
+      "snippet": "27 Years of Google !\n\nIt...",
+      "date": "Sep 27, 2025",
+      "publishedAt": "2025-09-27T06:44:06.568Z",
+      "labels": [
+        "LinkedIn",
+        "AI",
+        "Architecture",
+        "Strategy"
+      ]
     },
     {
       "type": "linkedin",
@@ -155,7 +186,7 @@
       "score": -1,
       "isAccepted": false,
       "snippet": "Engineering solution for \"Svelte 5 Unsafe State Mutation at Tree Component\" on Stack Overflow (Score: -1).",
-      "date": "Mar 27, 2025",
+      "date": "Mar 26, 2025",
       "publishedAt": "2025-03-26T20:02:10.000Z",
       "readTime": "2 min read",
       "labels": [
@@ -163,8 +194,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
@@ -196,6 +227,20 @@
     },
     {
       "type": "linkedin",
+      "title": "Microsoft ChatGPT & Data Privacy Controls in AI",
+      "url": "https://www.linkedin.com/posts/baljeetsingh_ai-linkedin-microsoft-activity-7244186317029359616-O8jv",
+      "cover": "https://media.licdn.com/dms/image/v2/D4D22AQGMnyX3V4S5Ig/feedshare-shrink_800/feedshare-shrink_800/0/1727094442545?e=2147483647&v=beta&t=cQXeoRh-js-pWrNX22hZyqz3N3X9S8BCCx5v5RXnkOo",
+      "image": "https://media.licdn.com/dms/image/v2/D4D22AQGMnyX3V4S5Ig/feedshare-shrink_800/feedshare-shrink_800/0/1727094442545?e=2147483647&v=beta&t=cQXeoRh-js-pWrNX22hZyqz3N3X9S8BCCx5v5RXnkOo",
+      "snippet": "Why is this ON by default ?!!\n\n\nAND \n\n\nWould you keep this setting ON ?!!\n\n\n\n#AI #LinkedIn #Microsoft #ChatGPT #CoPilot #DataPrivacy...",
+      "date": "Sep 24, 2024",
+      "publishedAt": "2024-09-24T03:30:08.453Z",
+      "labels": [
+        "LinkedIn",
+        "AI"
+      ]
+    },
+    {
+      "type": "linkedin",
       "title": "Hello Connections",
       "url": "https://www.linkedin.com/posts/baljeetsingh_hello-connections-we-are-hiring-business-activity-7236328630736322560-WmT9",
       "cover": "https://media.licdn.com/dms/image/v2/D4D22AQGw8-djJYm-iA/feedshare-image-high-res/feedshare-image-high-res/0/1725273140906?e=2147483647&v=beta&t=NoyKPeUMFl1gTc2sB30gajreguKRISF3J1tbMkna6s8",
@@ -206,6 +251,20 @@
       "labels": [
         "LinkedIn",
         "Strategy"
+      ]
+    },
+    {
+      "type": "linkedin",
+      "title": "I&;m attending Webinar &quot;Protect your data and save penalties of DPDPA.&quot;",
+      "url": "https://www.linkedin.com/posts/baljeetsingh_im-attending-webinar-protect-your-data-activity-7222198666944520192-5SPf",
+      "cover": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      "snippet": "I...",
+      "date": "Jul 25, 2024",
+      "publishedAt": "2024-07-25T11:19:04.162Z",
+      "labels": [
+        "LinkedIn",
+        "Architecture"
       ]
     },
     {
@@ -239,8 +298,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
@@ -273,8 +332,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -292,8 +351,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -311,8 +370,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
@@ -332,8 +391,8 @@
       "type": "linkedin",
       "title": "Baljeetsingh Sucharia posted on LinkedIn",
       "url": "https://www.linkedin.com/posts/baljeetsingh_lifesecret-workanniversary-activity-7020409890649059328-N01i",
-      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "snippet": "Baljeetsingh Sucharia posted a video on LinkedIn...",
       "date": "Jan 15, 2023",
       "publishedAt": "2023-01-15T15:22:30.839Z",
@@ -355,6 +414,21 @@
       "labels": [
         "LinkedIn",
         "Strategy"
+      ]
+    },
+    {
+      "type": "linkedin",
+      "title": "Looking forward !!",
+      "url": "https://www.linkedin.com/posts/baljeetsingh_looking-forward-something-exciting-and-activity-6987726092606296064-mdU9",
+      "cover": "https://media.licdn.com/dms/image/v2/C4D22AQEIK6mb1uyU3A/feedshare-image-high-res/feedshare-image-high-res/0/1665990273303?e=2147483647&v=beta&t=xq_Ybyla_G-57qvrS2hJDz1qBLNlwATwyhEcmz4GkTs",
+      "image": "https://media.licdn.com/dms/image/v2/C4D22AQEIK6mb1uyU3A/feedshare-image-high-res/feedshare-image-high-res/0/1665990273303?e=2147483647&v=beta&t=xq_Ybyla_G-57qvrS2hJDz1qBLNlwATwyhEcmz4GkTs",
+      "snippet": "Looking forward !!\nSomething Exciting and Amazing on the cards.\n...",
+      "date": "Oct 17, 2022",
+      "publishedAt": "2022-10-17T10:48:46.150Z",
+      "labels": [
+        "LinkedIn",
+        "Engineering",
+        "Insights"
       ]
     },
     {
@@ -433,6 +507,21 @@
     },
     {
       "type": "linkedin",
+      "title": "Leadershipcoach, Leadershipqualities, Trueleadership, Baljeetsingh",
+      "url": "https://www.linkedin.com/posts/baljeetsingh_leadershipcoach-leadershipqualities-trueleadership-activity-6920374522667790337-I_Ju",
+      "cover": "https://media.licdn.com/dms/image/v2/C4E22AQG2ubkPzTLnRg/feedshare-shrink_800/feedshare-shrink_800/0/1649945857257?e=2147483647&v=beta&t=_tI3Qhly9ZNGyXrWURFqjNZ-XQ1PnPnAVDt3KTeMjMA",
+      "image": "https://media.licdn.com/dms/image/v2/C4E22AQG2ubkPzTLnRg/feedshare-shrink_800/feedshare-shrink_800/0/1649945857257?e=2147483647&v=beta&t=_tI3Qhly9ZNGyXrWURFqjNZ-XQ1PnPnAVDt3KTeMjMA",
+      "snippet": "#leadershipcoach #leadershipqualities #trueleadership #baljeetsingh...",
+      "date": "Apr 14, 2022",
+      "publishedAt": "2022-04-14T14:17:40.545Z",
+      "labels": [
+        "LinkedIn",
+        "Engineering",
+        "Insights"
+      ]
+    },
+    {
+      "type": "linkedin",
       "title": "Leadership, Growthmindset, Motivation",
       "url": "https://www.linkedin.com/posts/baljeetsingh_leadership-growthmindset-motivation-activity-6916635912864989184-FYcB",
       "cover": "https://media.licdn.com/dms/image/v2/C4E22AQFycDLvOJc3DQ/feedshare-shrink_1280/feedshare-shrink_1280/0/1649054505499?e=2147483647&v=beta&t=AMDDOc3IGMs02IBw4oxLftrcdg8maDxhM48a3mwHrZ8",
@@ -449,11 +538,26 @@
       "type": "linkedin",
       "title": "Lifequotes, Quotes, Baljeetsinghitwale",
       "url": "https://www.linkedin.com/posts/baljeetsingh_lifequotes-quotes-baljeetsinghitwale-activity-6802305925270016000-1-th",
-      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+      "cover": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
       "snippet": "Sad or Glad? \nOne day everyone has to go. \nSo It is just about &quot;WHEN&quot; and not about &quot;IF&quot; \n\n#lifequotes #quotes #BaljeetsinghITwale...",
-      "date": "May 24, 2021",
+      "date": "May 23, 2021",
       "publishedAt": "2021-05-23T18:55:13.317Z",
+      "labels": [
+        "LinkedIn",
+        "Engineering",
+        "Insights"
+      ]
+    },
+    {
+      "type": "linkedin",
+      "title": "Technology, Simple, Complexity, Baljeetsingh",
+      "url": "https://www.linkedin.com/posts/baljeetsingh_technology-simple-complexity-activity-6798103286458142721-m_tH",
+      "cover": "https://media.licdn.com/dms/image/v2/C4D22AQH82WMzibtpgA/feedshare-shrink_800/feedshare-shrink_800/0/1620794125478?e=2147483647&v=beta&t=ZjRErGim1rVe8ubYsNbZT45OvGtjfbD64rHmWPfe4Uc",
+      "image": "https://media.licdn.com/dms/image/v2/C4D22AQH82WMzibtpgA/feedshare-shrink_800/feedshare-shrink_800/0/1620794125478?e=2147483647&v=beta&t=ZjRErGim1rVe8ubYsNbZT45OvGtjfbD64rHmWPfe4Uc",
+      "snippet": "#Technology is very #simple, \nProvided you tackle its #complexity\n\n-#Baljeetsingh...",
+      "date": "May 12, 2021",
+      "publishedAt": "2021-05-12T04:35:26.143Z",
       "labels": [
         "LinkedIn",
         "Engineering",
@@ -476,10 +580,24 @@
     },
     {
       "type": "linkedin",
+      "title": "Life Coaching, Career, Couple &amp; Parenting Guidance | LifeSecret",
+      "url": "https://www.linkedin.com/posts/baljeetsingh_lifesecret-activity-6762960087666442240-uoWi",
+      "cover": "https://media.licdn.com/dms/image/sync/v2/D4D27AQFbKU9cLNniZQ/articleshare-shrink_800/B4DZqTRp97G8AI-/0/1763407470822?e=2147483647&v=beta&t=8Rc9-tRxjCYytdwZ0jaCWl83ND4mqgQ_QaxmDnYWOCw",
+      "image": "https://media.licdn.com/dms/image/sync/v2/D4D27AQFbKU9cLNniZQ/articleshare-shrink_800/B4DZqTRp97G8AI-/0/1763407470822?e=2147483647&v=beta&t=8Rc9-tRxjCYytdwZ0jaCWl83ND4mqgQ_QaxmDnYWOCw",
+      "snippet": "Thank you Nathalie Mailhot for your kind words and great conversation with Shweta Sucharia  ! 🎉 ✨ ♥️ \n\n(Nathalie Mailhot is Experienced Communication Coach from Canada) \n\n🌟 Video...",
+      "date": "Feb 4, 2021",
+      "publishedAt": "2021-02-04T05:08:54.622Z",
+      "labels": [
+        "LinkedIn",
+        "Leadership"
+      ]
+    },
+    {
+      "type": "linkedin",
       "title": "Work, Time, Family, Powerpoint, Dying",
       "url": "https://www.linkedin.com/posts/baljeetsingh_work-time-family-activity-6740862813146779649-kYX3",
-      "cover": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
       "snippet": "#Work hard, but make #time for your #family .\n\nNobody remembers your #Powerpoint presentations on your #dying day !!! ...",
       "date": "Dec 5, 2020",
       "publishedAt": "2020-12-05T05:42:13.829Z",
@@ -511,7 +629,7 @@
       "cover": "https://media.licdn.com/dms/image/sync/v2/C4D27AQGOF-ND7KexRQ/articleshare-shrink_800/articleshare-shrink_800/0/1775930802513?e=2147483647&v=beta&t=4kT2uzNaN8KKFQQy_fqN45-yVICY_Cp1Ir5UjTufBU0",
       "image": "https://media.licdn.com/dms/image/sync/v2/C4D27AQGOF-ND7KexRQ/articleshare-shrink_800/articleshare-shrink_800/0/1775930802513?e=2147483647&v=beta&t=4kT2uzNaN8KKFQQy_fqN45-yVICY_Cp1Ir5UjTufBU0",
       "snippet": "Who is ready for a challenge? 🥊 💪🤺\n\n🌟💫Check out this #excellent #oppertunity @ PayPal\n\nhttps://lnkd.in/du22jCX...",
-      "date": "Aug 30, 2020",
+      "date": "Aug 29, 2020",
       "publishedAt": "2020-08-29T20:34:15.258Z",
       "labels": [
         "LinkedIn",
@@ -537,8 +655,8 @@
       "type": "linkedin",
       "title": "Today on my new beginning",
       "url": "https://www.linkedin.com/posts/baljeetsingh_today-on-my-new-beginning-i-would-like-activity-6687704765025030144-eW7d",
-      "cover": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+      "cover": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80",
       "snippet": "Today on my new beginning \n\nI would like to Heartily thank Anil Chawla\nHe is a phenomenal Inspirational coach.\n\nHe was a corporate coach for one of my previous companies. His coach...",
       "date": "Jul 11, 2020",
       "publishedAt": "2020-07-11T13:11:07.528Z",
@@ -552,10 +670,10 @@
       "title": "How to enhance messages?",
       "url": "https://medium.com/@baljeetsingh/how-to-enhance-messages-5b1c76b6909c?source=rss-dad7f6273bb0------2",
       "snippet": "How to enhance Skype messages? Need some spices to your Skype messages? Need of bringing more clarity to your Skype messages? Bored using plain text? Here are s...",
-      "cover": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80",
+      "cover": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
       "date": "Dec 22, 2019",
-      "publishedAt": "2019-12-22T03:00:29.000Z",
+      "publishedAt": "2019-12-22T08:30:29.000Z",
       "readTime": "1 min read",
       "labels": [
         "Medium",
@@ -569,10 +687,10 @@
       "title": "What will you Install on UR machine?",
       "url": "https://medium.com/@baljeetsingh/what-will-you-install-on-ur-machine-4cba1e4552e8?source=rss-dad7f6273bb0------2",
       "snippet": "I started making a list of what all software I would essentially require on MY Machine (Laptop / Desktop) Here is my quick list. Do share what is yours? C𝕆𝔻𝔼...",
-      "cover": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
       "date": "Dec 22, 2019",
-      "publishedAt": "2019-12-22T02:25:37.000Z",
+      "publishedAt": "2019-12-22T07:55:37.000Z",
       "readTime": "1 min read",
       "labels": [
         "Medium",
@@ -597,8 +715,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -616,8 +734,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -635,8 +753,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -654,8 +772,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -673,8 +791,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -692,8 +810,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -703,7 +821,7 @@
       "score": -1,
       "isAccepted": false,
       "snippet": "Engineering solution for \"Pushing selected daterange picker value to URL\" on Stack Overflow (Score: -1).",
-      "date": "Sep 10, 2018",
+      "date": "Sep 9, 2018",
       "publishedAt": "2018-09-09T20:06:34.000Z",
       "readTime": "2 min read",
       "labels": [
@@ -711,8 +829,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -730,8 +848,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "linkedin",
@@ -764,8 +882,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -783,8 +901,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -802,8 +920,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -813,7 +931,7 @@
       "score": 0,
       "isAccepted": false,
       "snippet": "Engineering solution for \"<a> tag problems and code behind problems\" on Stack Overflow (Score: 0).",
-      "date": "Mar 24, 2014",
+      "date": "Mar 23, 2014",
       "publishedAt": "2014-03-23T19:12:00.000Z",
       "readTime": "2 min read",
       "labels": [
@@ -821,8 +939,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -840,8 +958,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -859,8 +977,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -878,8 +996,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -897,8 +1015,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -916,8 +1034,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -927,7 +1045,7 @@
       "score": 0,
       "isAccepted": false,
       "snippet": "Engineering solution for \"Can you use a wildcard in getElementById?\" on Stack Overflow (Score: 0).",
-      "date": "Mar 17, 2014",
+      "date": "Mar 16, 2014",
       "publishedAt": "2014-03-16T20:53:15.000Z",
       "readTime": "2 min read",
       "labels": [
@@ -935,8 +1053,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -954,8 +1072,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -973,8 +1091,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -992,8 +1110,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -1011,8 +1129,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -1030,8 +1148,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
     },
     {
       "type": "stackoverflow",
@@ -1049,8 +1167,8 @@
         "Engineering",
         "Architecture"
       ],
-      "cover": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
-      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
+      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
     }
   ]
 }
