@@ -1,1 +1,618 @@
-
+{
+  "updatedAt": "2026-08-17T05:49:28.760Z",
+  "author": "Baljeetsingh Sucharia",
+  "totalItems": 32,
+  "userProfiles": {
+    "linkedin": "https://www.linkedin.com/in/baljeetsingh/",
+    "facebook": "https://www.facebook.com/baljeetsinghit/",
+    "stackoverflow": "https://stackoverflow.com/users/1415364/baljeetsingh-sucharia?tab=answers",
+    "medium": "https://medium.com/@baljeetsingh",
+    "blog": "https://blog.baljeetsingh.net"
+  },
+  "items": [
+    {
+      "type": "stackoverflow",
+      "id": "so-79786003",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/79786003",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Oct 9, 2025",
+      "publishedAt": "2025-10-09T03:08:10.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-79537165",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/79537165",
+      "score": -1,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: -1).",
+      "date": "Mar 26, 2025",
+      "publishedAt": "2025-03-26T20:02:10.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-77162114",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/77162114",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0, Accepted).",
+      "date": "Sep 23, 2023",
+      "publishedAt": "2023-09-23T07:51:29.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-75265737",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/75265737",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Jan 28, 2023",
+      "publishedAt": "2023-01-28T06:07:50.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-75265715",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/75265715",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Jan 28, 2023",
+      "publishedAt": "2023-01-28T06:01:47.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-75265577",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/75265577",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0, Accepted).",
+      "date": "Jan 28, 2023",
+      "publishedAt": "2023-01-28T05:25:44.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "medium",
+      "title": "How to enhance messages?",
+      "url": "https://medium.com/@baljeetsingh/how-to-enhance-messages-5b1c76b6909c?source=rss-dad7f6273bb0------2",
+      "snippet": "How to enhance Skype messages? Need some spices to your Skype messages? Need of bringing more clarity to your Skype messages? Bored using plain text? Here are s...",
+      "cover": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+      "date": "Dec 22, 2019",
+      "publishedAt": "2019-12-22T08:30:29.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Medium",
+        "tech-tips",
+        "skype",
+        "tips-and-tricks"
+      ]
+    },
+    {
+      "type": "medium",
+      "title": "What will you Install on UR machine?",
+      "url": "https://medium.com/@baljeetsingh/what-will-you-install-on-ur-machine-4cba1e4552e8?source=rss-dad7f6273bb0------2",
+      "snippet": "I started making a list of what all software I would essentially require on MY Machine (Laptop / Desktop) Here is my quick list. Do share what is yours? C𝕆𝔻𝔼...",
+      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "date": "Dec 22, 2019",
+      "publishedAt": "2019-12-22T07:55:37.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Medium",
+        "lists",
+        "development",
+        "install-list"
+      ]
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-57194068",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/57194068",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Jul 25, 2019",
+      "publishedAt": "2019-07-25T03:55:15.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-57193860",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/57193860",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Jul 25, 2019",
+      "publishedAt": "2019-07-25T03:27:23.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-53758462",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/53758462",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0, Accepted).",
+      "date": "Dec 13, 2018",
+      "publishedAt": "2018-12-13T09:16:11.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-53755223",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/53755223",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0, Accepted).",
+      "date": "Dec 13, 2018",
+      "publishedAt": "2018-12-13T04:56:40.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-53755176",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/53755176",
+      "score": -1,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: -1).",
+      "date": "Dec 13, 2018",
+      "publishedAt": "2018-12-13T04:49:54.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-53755130",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/53755130",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Dec 13, 2018",
+      "publishedAt": "2018-12-13T04:43:18.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-52248286",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/52248286",
+      "score": -1,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: -1).",
+      "date": "Sep 9, 2018",
+      "publishedAt": "2018-09-09T20:06:34.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-52138243",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/52138243",
+      "score": 2,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 2).",
+      "date": "Sep 2, 2018",
+      "publishedAt": "2018-09-02T15:06:42.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-42482805",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/42482805",
+      "score": 7,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 7).",
+      "date": "Feb 27, 2017",
+      "publishedAt": "2017-02-27T10:04:06.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-42482034",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/42482034",
+      "score": 0,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0, Accepted).",
+      "date": "Feb 27, 2017",
+      "publishedAt": "2017-02-27T09:27:01.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22753072",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22753072",
+      "score": 2,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 2, Accepted).",
+      "date": "Mar 31, 2014",
+      "publishedAt": "2014-03-31T03:15:03.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22595702",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22595702",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Mar 23, 2014",
+      "publishedAt": "2014-03-23T19:12:00.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22572928",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22572928",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Mar 22, 2014",
+      "publishedAt": "2014-03-22T03:06:18.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22524146",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22524146",
+      "score": 1,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 1, Accepted).",
+      "date": "Mar 20, 2014",
+      "publishedAt": "2014-03-20T05:25:06.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22506738",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22506738",
+      "score": 7,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 7, Accepted).",
+      "date": "Mar 19, 2014",
+      "publishedAt": "2014-03-19T13:03:11.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551808525-51a94da548ce?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22469579",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22469579",
+      "score": 1,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 1).",
+      "date": "Mar 18, 2014",
+      "publishedAt": "2014-03-18T03:01:39.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22469294",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22469294",
+      "score": 1,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 1, Accepted).",
+      "date": "Mar 18, 2014",
+      "publishedAt": "2014-03-18T02:29:16.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22442865",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22442865",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Mar 16, 2014",
+      "publishedAt": "2014-03-16T20:53:15.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22438499",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22438499",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Mar 16, 2014",
+      "publishedAt": "2014-03-16T15:01:11.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22437947",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22437947",
+      "score": 3,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 3).",
+      "date": "Mar 16, 2014",
+      "publishedAt": "2014-03-16T14:12:08.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22437585",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22437585",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Mar 16, 2014",
+      "publishedAt": "2014-03-16T13:40:46.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22418783",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22418783",
+      "score": 2,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 2).",
+      "date": "Mar 15, 2014",
+      "publishedAt": "2014-03-15T02:25:36.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22395299",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22395299",
+      "score": 1,
+      "isAccepted": true,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 1, Accepted).",
+      "date": "Mar 14, 2014",
+      "publishedAt": "2014-03-14T02:55:30.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "type": "stackoverflow",
+      "id": "so-22266315",
+      "title": "Technical Answer & Code Solution",
+      "url": "https://stackoverflow.com/a/22266315",
+      "score": 0,
+      "isAccepted": false,
+      "snippet": "High-impact engineering answer accepted on Stack Overflow (Score: 0).",
+      "date": "Mar 8, 2014",
+      "publishedAt": "2014-03-08T07:09:59.000Z",
+      "readTime": "1 min read",
+      "labels": [
+        "Stack Overflow",
+        "Engineering",
+        "Architecture"
+      ],
+      "cover": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=1200&q=80"
+    }
+  ]
+}
