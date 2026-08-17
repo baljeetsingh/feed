@@ -34,8 +34,18 @@ jobs:
           const MEDIUM_USERNAME = 'baljeetsingh';
           const BLOG_FEED_URL = 'https://blog.baljeetsingh.net/feeds/posts/default?alt=json&max-results=50';
           const OUTPUT_PATH = 'streams.json';
-          const GOOGLE_API_KEY = process.env.GOOGLE_SEARCH_API_KEY || '';
-          const GOOGLE_CX = process.env.GOOGLE_SEARCH_CX || '50b91f6edf59b4030';
+          const GOOGLE_API_KEY = (process.env.GOOGLE_SEARCH_API_KEY || '').trim();
+          const GOOGLE_CX = (process.env.GOOGLE_SEARCH_CX || '').trim();
+
+          console.log('\n===============================================================');
+          console.log('🚀 [STEP 1/4] INITIALIZING FEED AUTOMATION ENGINE');
+          console.log('===============================================================');
+          console.log(`⏱️ Execution Timestamp: ${new Date().toISOString()}`);
+          console.log(`👤 Target Profile: Baljeetsingh Sucharia`);
+          console.log(`🔍 Stack Overflow User: ${STACK_OVERFLOW_USER_ID}`);
+          console.log(`✍️ Medium Handle: @${MEDIUM_USERNAME}`);
+          console.log(`🔑 Google API Key Status: ${GOOGLE_API_KEY ? `✅ Configured (${GOOGLE_API_KEY.slice(0, 6)}...len:${GOOGLE_API_KEY.length})` : '❌ MISSING (Add GOOGLE_SEARCH_API_KEY in repo secrets)'}`);
+          console.log(`🎯 Google Search CX: ${GOOGLE_CX ? `✅ Configured (${GOOGLE_CX})` : '❌ MISSING'}`);
 
           const UNIQUE_PHOTO_POOL = [
             'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
@@ -68,7 +78,7 @@ jobs:
               .replace(/&amp;/g, '&')
               .replace(/&lt;/g, '<')
               .replace(/&gt;/g, '>')
-              .replace(/&#x27;/g, "'")
+              .replace(/&#27;/g, "'")
               .replace(/&#x2F;/g, '/')
               .replace(/&#x60;/g, '`')
               .replace(/&#x3D;/g, '=');
@@ -87,24 +97,31 @@ jobs:
           }
 
           async function fetchStackOverflow() {
-            console.log('⚡ Fetching Stack Overflow answers for User ID:', STACK_OVERFLOW_USER_ID);
+            console.log('\n---------------------------------------------------------------');
+            console.log('⚡ [STEP 2A] FETCHING STACK OVERFLOW ANSWERS');
+            console.log('---------------------------------------------------------------');
             const items = [];
             try {
               const url = `https://api.stackexchange.com/2.3/users/${STACK_OVERFLOW_USER_ID}/answers?order=desc&sort=creation&site=stackoverflow`;
+              console.log(`➡️ Requesting user answers: ${url}`);
               const res = await fetch(url);
+              console.log(`⬅️ Stack Overflow Answers API Response Status: ${res.status}`);
               if (!res.ok) throw new Error(`HTTP ${res.status}`);
               const data = await res.json();
+              
               if (data.items && data.items.length > 0) {
-                // Batch-fetch all question titles in 1 single efficient request
+                console.log(`📦 Retrieved ${data.items.length} raw answers. Batch-resolving question titles...`);
                 const questionIds = data.items.map(a => a.question_id).join(';');
                 const qUrl = `https://api.stackexchange.com/2.3/questions/${questionIds}?site=stackoverflow`;
                 const qRes = await fetch(qUrl);
+                console.log(`⬅️ Batch Questions API Response Status: ${qRes.status}`);
                 const qData = await qRes.json();
                 const qMap = {};
                 if (qData.items) {
                   qData.items.forEach(q => {
                     qMap[q.question_id] = decodeHtml(q.title);
                   });
+                  console.log(`✅ Successfully mapped ${Object.keys(qMap).length} question titles.`);
                 }
 
                 for (const item of data.items) {
@@ -127,24 +144,34 @@ jobs:
                     labels: ['Stack Overflow', 'Engineering', 'Architecture']
                   });
                 }
+
+                console.log(`📋 Sample resolved Stack Overflow items:`);
+                items.slice(0, 3).forEach((it, i) => console.log(`   ${i + 1}. [Score: ${it.score}] ${it.title}`));
+              } else {
+                console.warn('⚠️ No answers returned from Stack Overflow API.');
               }
             } catch (err) {
-              console.error('Stack Overflow fetch error:', err.message);
+              console.error('❌ Stack Overflow fetch error:', err.message);
             }
-            console.log(`✅ Loaded ${items.length} Stack Overflow answers with rich question titles.`);
+            console.log(`✅ Finished Stack Overflow: Loaded ${items.length} answers.`);
             return items;
           }
 
           async function fetchMedium() {
-            console.log('⚡ Fetching Medium articles for @' + MEDIUM_USERNAME);
+            console.log('\n---------------------------------------------------------------');
+            console.log('⚡ [STEP 2B] FETCHING MEDIUM ARTICLES');
+            console.log('---------------------------------------------------------------');
             const items = [];
             try {
               const feedUrl = `https://medium.com/feed/@${MEDIUM_USERNAME}`;
               const rssApiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`;
+              console.log(`➡️ Requesting Medium RSS feed: ${rssApiUrl}`);
               const res = await fetch(rssApiUrl);
+              console.log(`⬅️ Medium RSS API Response Status: ${res.status}`);
               if (!res.ok) throw new Error(`HTTP ${res.status}`);
               const data = await res.json();
               if (data.status === 'ok' && data.items) {
+                console.log(`📦 Retrieved ${data.items.length} Medium stories.`);
                 for (const item of data.items) {
                   const title = decodeHtml(item.title);
                   const content = extractPureText(item.content || item.description || '');
@@ -164,12 +191,15 @@ jobs:
                     readTime: calculateReadTime(content),
                     labels: item.categories && item.categories.length ? ['Medium', ...item.categories.slice(0, 3)] : ['Medium', 'Article']
                   });
+                  console.log(`   • "${title}" -> ${item.link}`);
                 }
+              } else {
+                console.warn('⚠️ No stories found in Medium RSS feed or non-OK status:', data.message);
               }
             } catch (err) {
-              console.error('Medium fetch error:', err.message);
+              console.error('❌ Medium fetch error:', err.message);
             }
-            console.log(`✅ Loaded ${items.length} Medium articles.`);
+            console.log(`✅ Finished Medium: Loaded ${items.length} stories.`);
             return items;
           }
 
@@ -214,49 +244,78 @@ jobs:
           }
 
           async function queryGoogleCustomSearch(query) {
-            if (!GOOGLE_API_KEY || !GOOGLE_CX) return [];
+            if (!GOOGLE_API_KEY || !GOOGLE_CX) {
+              console.log('   ⚠️ Google Search API Key or CX not set. Skipping Google API query.');
+              return [];
+            }
             const results = [];
             try {
               for (let start = 1; start <= 31; start += 10) {
                 const url = `https://www.googleapis.com/customsearch/v1?key=${GOOGLE_API_KEY}&cx=${GOOGLE_CX}&q=${encodeURIComponent(query)}&start=${start}&num=10`;
+                console.log(`   ➡️ [Google CSE API] GET query="${query}" start=${start}`);
                 const res = await fetch(url);
-                if (!res.ok) break;
+                console.log(`   ⬅️ [Google CSE API] HTTP Status: ${res.status} ${res.statusText}`);
+                if (!res.ok) {
+                  const errText = await res.text();
+                  console.warn(`   ❌ Google Custom Search API Error (${res.status}):`, errText.slice(0, 300));
+                  break;
+                }
                 const data = await res.json();
-                if (data.items) {
+                if (data.items && data.items.length > 0) {
+                  console.log(`   📦 [Google CSE API] Found ${data.items.length} items on page start=${start}`);
                   for (const item of data.items) {
                     results.push(item);
                   }
+                } else {
+                  console.log(`   ℹ️ [Google CSE API] No more items on page start=${start}`);
                 }
                 if (!data.queries?.nextPage) break;
               }
             } catch (err) {
-              console.warn('Google Search API query warning:', err.message);
+              console.warn('   ❌ Google Search API query warning:', err.message);
             }
             return results;
           }
 
           async function fetchLinkedInArticles() {
-            console.log('Dynamically searching and parsing live social posts for Baljeetsingh Sucharia...');
+            console.log('\n---------------------------------------------------------------');
+            console.log('🌐 [STEP 3] DISCOVERING LIVE SOCIAL POSTS (LINKEDIN & FACEBOOK)');
+            console.log('---------------------------------------------------------------');
             const candidateLinks = new Set();
+            const googleMetadataMap = {};
 
             // 1. Official Google Custom Search JSON API
             if (GOOGLE_API_KEY && GOOGLE_CX) {
-              console.log('⚡ Querying Official Google Custom Search API...');
+              console.log(`\n🔍 [Method 1] Executing Google Custom Search API Queries (CX: ${GOOGLE_CX})...`);
               const googleQueries = [
                 '"baljeetsingh sucharia" site:linkedin.com',
                 '"baljeetsingh" site:linkedin.com/posts',
                 '"baljeetsingh sucharia" site:facebook.com',
-                'site:facebook.com/baljeetsinghit'
+                'site:facebook.com/baljeetsinghit',
+                'site:linkedin.com/in/baljeetsingh'
               ];
               for (const gq of googleQueries) {
                 const gItems = await queryGoogleCustomSearch(gq);
+                console.log(`   📊 Query "${gq}" produced ${gItems.length} Google-indexed items.`);
                 for (const gItem of gItems) {
-                  if (gItem.link) candidateLinks.add(gItem.link.split('?')[0]);
+                  if (gItem.link) {
+                    const cleanUrl = gItem.link.split('?')[0];
+                    candidateLinks.add(cleanUrl);
+                    googleMetadataMap[cleanUrl] = {
+                      title: gItem.title || '',
+                      snippet: gItem.snippet || '',
+                      image: gItem.pagemap?.cse_image?.[0]?.src || gItem.pagemap?.metatags?.[0]?.['og:image'] || null
+                    };
+                    console.log(`      + Added Google candidate: ${cleanUrl} (${gItem.title || 'Untitled'})`);
+                  }
                 }
               }
+            } else {
+              console.log('\nℹ️ [Method 1] Google Custom Search API skipped (Missing API Key or CX).');
             }
 
             // 2. Open Search Index Crawler (Complementary Discovery)
+            console.log('\n🔍 [Method 2] Executing Open Search Index Crawler Queries...');
             let sessionCookie = '';
             try {
               const initRes = await fetch('https://search.yahoo.com/', {
@@ -273,6 +332,8 @@ jobs:
             ];
 
             for (const q of searchQueries) {
+              console.log(`   ➡️ Crawling query: "${q}"...`);
+              let queryFound = 0;
               for (let page = 1; page <= 61; page += 10) {
                 try {
                   const searchUrl = `https://search.yahoo.com/search?p=${encodeURIComponent(q)}&b=${page}`;
@@ -289,16 +350,21 @@ jobs:
                     let link = safeDecode(m[1]).split('?')[0];
                     link = link.replace(/https?:\/\/[a-z0-9-]+\.linkedin\.com/, 'https://www.linkedin.com');
                     candidateLinks.add(link);
+                    queryFound++;
                   }
                 } catch (err) {}
               }
+              console.log(`   📊 Query "${q}" decoded ${queryFound} candidate redirect links.`);
             }
 
+            console.log(`\n📋 Total Candidate Pool: ${candidateLinks.size} unique URLs.`);
+
             // Strict Author & Content Filter
+            console.log('🛡️ Applying strict author & profile identity verification...');
             const verifiedCandidates = [];
             for (const link of candidateLinks) {
-              const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/');
-              const isFb = link.includes('facebook.com/') && (link.includes('/photos/') || link.includes('/posts/') || link.includes('/videos/') || link.includes('/reels/') || link.includes('story.php') || link.endsWith('/baljeetsinghit/'));
+              const isLi = link.includes('linkedin.com/posts/') || link.includes('linkedin.com/feed/update/') || link.includes('linkedin.com/pulse/') || link.includes('linkedin.com/in/baljeetsingh');
+              const isFb = link.includes('facebook.com/') && (link.includes('/photos/') || link.includes('/posts/') || link.includes('/videos/') || link.includes('/reels/') || link.includes('story.php') || link.includes('/baljeetsinghit') || link.includes('/baljeetsingh.sucharia'));
 
               const lLower = link.toLowerCase();
               let isAuthentic = false;
@@ -317,10 +383,13 @@ jobs:
 
               if (isAuthentic) {
                 verifiedCandidates.push(link);
+                console.log(`   ✅ Approved candidate: ${link}`);
+              } else {
+                console.log(`   ⏭️ Filtered out non-matching link: ${link}`);
               }
             }
 
-            console.log(`Discovered ${verifiedCandidates.length} authentic social post URLs dynamically. Extracting live post photos and metadata...`);
+            console.log(`\n🎯 Filtered to ${verifiedCandidates.length} authentic social posts. Extracting live post photos and metadata...`);
 
             const verifiedItems = [];
             const seenTitles = new Set();
@@ -328,49 +397,63 @@ jobs:
             for (const url of verifiedCandidates) {
               try {
                 const isFacebook = url.includes('facebook.com');
-                const userAgent = isFacebook ?
-                  'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)' :
-                  'LinkedInBot/1.0 (compatible; Mozilla/5.0; Apache-HttpClient +http://www.linkedin.com)';
+                const gMeta = googleMetadataMap[url] || {};
+                let postPhoto = gMeta.image || null;
+                let rawTitle = gMeta.title || '';
+                let rawSnippet = gMeta.snippet || '';
 
-                const headRes = await fetch(url, {
-                  headers: {
-                    'User-Agent': userAgent,
-                    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
-                  },
-                  redirect: 'follow'
-                });
+                console.log(`\n   🔍 Inspecting metadata for: ${url}`);
+                if (postPhoto) console.log(`      📸 Google CSE Pre-indexed Photo: ${postPhoto.slice(0, 70)}...`);
 
-                const finalUrl = headRes.url || url;
-                if (headRes.status === 404 || finalUrl.includes('article_not_found') || finalUrl.includes('trk=article_not_found')) {
+                // Try fetching page HTML for highest resolution live photo and text
+                try {
+                  const userAgent = isFacebook ?
+                    'facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)' :
+                    'LinkedInBot/1.0 (compatible; Mozilla/5.0; Apache-HttpClient +http://www.linkedin.com)';
+
+                  const headRes = await fetch(url, {
+                    headers: {
+                      'User-Agent': userAgent,
+                      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+                    },
+                    redirect: 'follow'
+                  });
+
+                  const finalUrl = headRes.url || url;
+                  console.log(`      🌐 Direct HTTP status: ${headRes.status} (Final URL: ${finalUrl})`);
+                  if (headRes.status !== 404 && !finalUrl.includes('article_not_found') && !finalUrl.includes('trk=article_not_found')) {
+                    const html = await headRes.text();
+
+                    const ogImageMatch = html.match(/<meta\s+(?:property|name)=["']og:image["']\s+content=["']([^"']+)["']/i) ||
+                                         html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:image["']/i) ||
+                                         html.match(/<meta\s+(?:property|name)=["']twitter:image["']\s+content=["']([^"']+)["']/i);
+                    if (ogImageMatch) {
+                      const candidateImg = ogImageMatch[1].replace(/&amp;/g, '&');
+                      if (!candidateImg.includes('static.licdn.com/aero-v1/sc/h/') && !candidateImg.includes('static.xx.fbcdn.net/rsrc.php')) {
+                        postPhoto = candidateImg;
+                        console.log(`      📸 Direct OpenGraph Photo: ${postPhoto.slice(0, 70)}...`);
+                      }
+                    }
+
+                    const ogTitleMatch = html.match(/<meta\s+(?:property|name)=["']og:title["']\s+content=["']([^"']+)["']/i) ||
+                                         html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:title["']/i);
+                    const ogDescMatch = html.match(/<meta\s+(?:property|name)=["']og:description["']\s+content=["']([^"']+)["']/i) ||
+                                        html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:description["']/i);
+                    
+                    if (ogTitleMatch && ogTitleMatch[1]) rawTitle = ogTitleMatch[1];
+                    if (ogDescMatch && ogDescMatch[1]) rawSnippet = ogDescMatch[1];
+                  }
+                } catch (fetchErr) {
+                  console.log(`      ℹ️ Direct fetch skipped (${fetchErr.message}). Using Google search metadata.`);
+                }
+
+                const title = cleanTitle(rawTitle, url, isFacebook);
+                const snippet = rawSnippet ? rawSnippet.replace(/&amp;/g, '&').replace(/<[^>]*>?/gm, '').slice(0, 180) + '...' : `${isFacebook ? 'Facebook' : 'LinkedIn'} dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering architecture.`;
+                
+                if (seenTitles.has(title.toLowerCase())) {
+                  console.log(`      ⚠️ Duplicate title skipped: "${title}"`);
                   continue;
                 }
-
-                const html = await headRes.text();
-
-                // 📸 Extract direct post photo from OpenGraph / Twitter metadata
-                let postPhoto = null;
-                const ogImageMatch = html.match(/<meta\s+(?:property|name)=["']og:image["']\s+content=["']([^"']+)["']/i) ||
-                                     html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:image["']/i) ||
-                                     html.match(/<meta\s+(?:property|name)=["']twitter:image["']\s+content=["']([^"']+)["']/i);
-                
-                if (ogImageMatch) {
-                  const candidateImg = ogImageMatch[1].replace(/&amp;/g, '&');
-                  if (!candidateImg.includes('static.licdn.com/aero-v1/sc/h/') && !candidateImg.includes('static.xx.fbcdn.net/rsrc.php')) {
-                    postPhoto = candidateImg;
-                  }
-                }
-
-                // Dynamic Title & Snippet extraction
-                const ogTitleMatch = html.match(/<meta\s+(?:property|name)=["']og:title["']\s+content=["']([^"']+)["']/i) ||
-                                     html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:title["']/i);
-                const ogDescMatch = html.match(/<meta\s+(?:property|name)=["']og:description["']\s+content=["']([^"']+)["']/i) ||
-                                    html.match(/<meta\s+content=["']([^"']+)["']\s+(?:property|name)=["']og:description["']/i);
-                
-                const rawTitle = ogTitleMatch ? ogTitleMatch[1] : '';
-                const title = cleanTitle(rawTitle, url, isFacebook);
-                const snippet = ogDescMatch ? ogDescMatch[1].replace(/&amp;/g, '&').replace(/<[^>]*>?/gm, '').slice(0, 180) + '...' : `${isFacebook ? 'Facebook' : 'LinkedIn'} dispatch by Baljeetsingh Sucharia on ${title.toLowerCase()}, product strategy, and engineering architecture.`;
-                
-                if (seenTitles.has(title.toLowerCase())) continue;
                 seenTitles.add(title.toLowerCase());
 
                 // Dynamic Labels extraction
@@ -396,17 +479,21 @@ jobs:
                   publishedAt: isoDate,
                   labels: labels
                 });
-                console.log(`  ✅ Verified: "${title}" ${postPhoto ? '(📸 Live Post Photo Extracted)' : ''}`);
+                console.log(`      ✨ Verified & Added: "${title}" [Labels: ${labels.join(', ')}]`);
               } catch (e) {
-                // Ignore unreachable links
+                console.warn(`      ❌ Error processing candidate ${url}:`, e.message);
               }
             }
 
-            console.log(`Successfully parsed ${verifiedItems.length} live social items dynamically.`);
+            console.log(`\n✅ Finished Social Posts: ${verifiedItems.length} authentic items ready.`);
             return verifiedItems;
           }
 
           async function runSync() {
+            console.log('\n===============================================================');
+            console.log('🚀 [STEP 4/4] AGGREGATING ALL FEEDS & GENERATING STREAMS.JSON');
+            console.log('===============================================================');
+
             const [soItems, medItems, liItems] = await Promise.all([
               fetchStackOverflow(),
               fetchMedium(),
@@ -415,12 +502,20 @@ jobs:
 
             const allItems = [...liItems, ...medItems, ...soItems];
 
+            console.log('\n📊 Feed Breakdown:');
+            console.log(`   • LinkedIn & Facebook: ${liItems.length} items`);
+            console.log(`   • Medium Articles:     ${medItems.length} items`);
+            console.log(`   • Stack Overflow:      ${soItems.length} items`);
+            console.log(`   -------------------------------------------------`);
+            console.log(`   • Total Stream Items:  ${allItems.length} items`);
+
             // 🛡️ Safety Guard: Never overwrite streams.json if zero items are returned
             if (!allItems || allItems.length === 0) {
-              console.error('❌ Error: No stream items were fetched. Aborting write to protect against empty feed.');
+              console.error('\n❌ CRITICAL: No stream items were fetched. Aborting write to protect against empty feed.');
               process.exit(1);
             }
 
+            console.log('\n🔄 Sorting all items chronologically (latest first)...');
             allItems.sort((a, b) => {
               const tA = a.publishedAt ? Date.parse(a.publishedAt) : 0;
               const tB = b.publishedAt ? Date.parse(b.publishedAt) : 0;
@@ -452,7 +547,9 @@ jobs:
             };
 
             fs.writeFileSync(OUTPUT_PATH, JSON.stringify(outputPayload, null, 2));
-            console.log('Successfully generated', OUTPUT_PATH, 'with', allItems.length, 'verified stream items.');
+            const stat = fs.statSync(OUTPUT_PATH);
+            console.log(`\n🎉 SUCCESS! Generated ${OUTPUT_PATH} (${stat.size} bytes) with ${allItems.length} verified items.`);
+            console.log('===============================================================\n');
           }
 
           runSync();
