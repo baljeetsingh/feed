@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-08-27T21:56:54.613Z",
+  "updatedAt": "2026-08-28T10:11:51.404Z",
   "author": "Baljeetsingh Sucharia",
-  "totalItems": 125,
+  "totalItems": 126,
   "userProfiles": {
     "linkedin": "https://www.linkedin.com/in/baljeetsingh/",
     "stackoverflow": "https://stackoverflow.com/users/1415364/baljeetsingh-sucharia?tab=answers",
@@ -109,6 +109,21 @@
       "snippet": "LinkedIn dispatch by Baljeetsingh Sucharia on bangalore, product strategy, and engineering architecture.",
       "date": "Feb 11, 2026",
       "publishedAt": "2026-02-11T14:21:27.327Z",
+      "labels": [
+        "LinkedIn",
+        "Architecture",
+        "Strategy"
+      ]
+    },
+    {
+      "type": "linkedin",
+      "title": "One Of My Favorite Video Https",
+      "url": "https://www.linkedin.com/posts/baljeetsingh_one-of-my-favorite-video-https-activity-7413786072020717568-Xigx/RK=2/RS=xVQm9C1xBGoh7nI2SbfjgPL6WWc-",
+      "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "snippet": "LinkedIn dispatch by Baljeetsingh Sucharia on one of my favorite video https, product strategy, and engineering architecture.",
+      "date": "Jan 5, 2026",
+      "publishedAt": "2026-01-05T03:39:01.054Z",
       "labels": [
         "LinkedIn",
         "Architecture",
